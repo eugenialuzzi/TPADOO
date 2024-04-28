@@ -21,7 +21,7 @@ public class Carrera {
      * @param Materia materia 
      * @return
      */
-    public List<Materia> Correlatividad(void Materia materia) {
+    public List<Materia> Correlatividad(Materia materia) {
         // TODO implement here
         return null;
     }

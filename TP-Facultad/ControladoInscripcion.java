@@ -16,7 +16,7 @@ public class ControladoInscripcion {
      * @param Estudiante estudiante 
      * @return
      */
-    public Boolean tieneVacante(void Estudiante estudiante) {
+    public Boolean tieneVacante(Estudiante estudiante) {
         // TODO implement here
         return null;
     }
@@ -25,7 +25,7 @@ public class ControladoInscripcion {
      * @param Materia materia 
      * @return
      */
-    public List<Cursos> mostrarCursosDisponibles(void Materia materia) {
+    public List<Curso> mostrarCursosDisponibles( Materia materia) {
         // TODO implement here
         return null;
     }
@@ -34,7 +34,7 @@ public class ControladoInscripcion {
      * @param Carrera carrera 
      * @return
      */
-    public void validarFechaLimite(void Carrera carrera) {
+    public boolean validarFechaLimite(Carrera carrera) {
         // TODO implement here
         return null;
     }
@@ -43,7 +43,7 @@ public class ControladoInscripcion {
      * @param Estudiante estudiante 
      * @return
      */
-    public integer validarCantCursosInscriptos(void Estudiante estudiante) {
+    public integer validarCantCursosInscriptos( Estudiante estudiante) {
         // TODO implement here
         return null;
     }
@@ -53,7 +53,7 @@ public class ControladoInscripcion {
      * @param Mareria materia 
      * @return
      */
-    public Boolean validarCorrelativas(void Estudiante estudiante, void Mareria materia) {
+    public Boolean validarCorrelativas( Estudiante estudiante,  Materia materia) {
         // TODO implement here
         return null;
     }
@@ -61,7 +61,7 @@ public class ControladoInscripcion {
     /**
      * 
      */
-    public void calcularMonto(materias: Map<Materia,Integer>): float() {
+    public void calcularMonto(Map<Materia,Integer> materia) {
         // TODO implement here
     }
 
@@ -69,7 +69,7 @@ public class ControladoInscripcion {
      * @param Estudiante estudiante 
      * @return
      */
-    public integer calcularCargaHoraria(void Estudiante estudiante) {
+    public integer calcularCargaHoraria(Estudiante estudiante) {
         // TODO implement here
         return null;
     }
