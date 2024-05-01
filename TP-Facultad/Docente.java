@@ -43,7 +43,7 @@ public class Docente {
 	        return curso;
 	    }
 
-	public void setCarrera(Curso curso) {
+	public void setCurso(Curso curso) {
 	        this.curso = curso;
 	    }
 	

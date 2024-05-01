@@ -35,6 +35,10 @@ public class ProgramaPrincipal {
 		Docente docente1 = new Docente ("Esteban", "Lamonte", 35);
 		Docente docente2 = new Docente ("Carmen", "Lopez", 22);
 		
+
+		Aula aula = new Aula (123, 50);
+
+		
 		// TODO Auto-generated method stub
 
 	}
