@@ -6,17 +6,16 @@ import java.util.*;
  */
 public class ControladorCarrera {
 
-    /**
-     * Default constructor
-     */
+	private List<Materia> materias;
+	
     public ControladorCarrera() {
     }
 
-    /**
-     * @param Carrera carrera 
-     * @return
-     */
-    public Boolean validarCargaHorariaMax(void Carrera carrera) {
+	public void agregarMateria(List<Materia> materias) {
+	    this.materias.add((Materia) materias);
+	}
+
+    public Boolean validarCargaHorariaMax( Carrera carrera) {
         // TODO implement here
         return null;
     }

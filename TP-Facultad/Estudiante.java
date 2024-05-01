@@ -5,13 +5,6 @@ import java.util.*;
  * 
  */
 public class Estudiante {
-
-    /**
-     * Default constructor
-     */
-    public Estudiante() {
-    }
-
     /**
      * 
      */
@@ -32,14 +25,48 @@ public class Estudiante {
      */
     private Boolean estadoEstudiante;
 
-    /**
-     * @param Carrera carrera 
-     * @param Materia materia 
-     * @return
-     */
-    public boolean ValidarCorrelactividad(void Carrera carrera, void Materia materia) {
-        // TODO implement here
+    
+    private Carrera carrera;
+     
+    private Materia materia;
+
+
+	public Estudiante(String nombre, String apellido, int idEstudiante, Boolean estadoEstudiante, Carrera carrera) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.idEstudiante = idEstudiante;
+		this.estadoEstudiante = estadoEstudiante;
+		this.carrera = carrera;
+	}
+	
+	public Carrera getCarrera() {
+	        return carrera;
+	    }
+
+	public void setCarrera(Carrera carrera) {
+	        this.carrera = carrera;
+	    }
+	
+	public int getCargaHorariaMax() {
+		return carrera.getCargaHorariaMax();
+		
+	}
+	    
+	
+    public boolean ValidarCorrelactividad(Carrera carrera,  Materia materia) {
+    	 List<Materia> materiasCorrelativas = carrera.Correlatividad(materia);
         return false;
     }
+
+	@Override
+	public String toString() {
+		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", idEstudiante=" + idEstudiante
+				+ ", estadoEstudiante=" + estadoEstudiante + ", carrera=" + carrera + ", materia=" + materia + "]";
+	}
+    
+    
+    
+	
 
 }

@@ -16,7 +16,7 @@ public class ControladorCurso {
      * @param Curso curso 
      * @return
      */
-    public void recorrerCurso(void Curso curso) {
+    public void recorrerCurso(Curso curso) {
         // TODO implement here
         return null;
     }

@@ -22,14 +22,14 @@ public class PDF implements IExportarArchivo {
     /**
      * @param list<Curso>
      */
-    public void exportar(void list<Curso>) {
+    public void exportar(List<Curso>) {
         // TODO implement here
     }
 
     /**
      * @param list<Curso>
      */
-    public void exportar(void list<Curso>) {
+    public void exportar(List<Curso>) {
         // TODO implement here
     }
 

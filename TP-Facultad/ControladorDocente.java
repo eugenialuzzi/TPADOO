@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * 
  */
-public class ControladorDocente implements IExportarArchivo, IExportarArchivo {
+public class ControladorDocente implements IExportarArchivo {
 
     /**
      * Default constructor

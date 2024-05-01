@@ -16,7 +16,7 @@ public class ControladorEstudiante {
      * @param Estudiante estudiante 
      * @return
      */
-    public List<Materia> obtenerMateriasAprobadas(void Estudiante estudiante) {
+    public List<Materia> obtenerMateriasAprobadas( Estudiante estudiante) {
         // TODO implement here
         return null;
     }
