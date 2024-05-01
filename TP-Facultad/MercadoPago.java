@@ -12,16 +12,7 @@ public class MercadoPago implements IMedioDePago {
     public MercadoPago() {
     }
 
-    /**
-     * @param monto
-     */
-    public void pagar(float monto) {
-        // TODO implement here
-    }
 
-    /**
-     * @param monto
-     */
     public void pagar(float monto) {
         // TODO implement here
     }
