@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import controllers.ControladorCarrera;
+import controllers.ControladorMateria;
 import model.Aula;
 import model.Carrera;
 import model.Docente;
@@ -12,22 +13,32 @@ import model.Materia;
 public class ProgramaPrincipal {
 
 	public static void main(String[] args) {
-		
-		
-		
-		Carrera carrera1 = new Carrera("Ingenieria en Sistemas");
-		Carrera carrera2 = new Carrera("Derecho");
-		Carrera carrera3 = new Carrera("Ingenieria Quimica");
-		
 		ControladorCarrera controladorCarrera = new ControladorCarrera();
+		ControladorMateria controladorMateria = new ControladorMateria();
+		
+		/*Carrera carrera1 = new Carrera("Ingenieria en Sistemas"); */
+		Carrera carrera1=controladorCarrera.crearCarrera("Ingenieria en Sistemas");
+		
+		/*Carrera carrera2 = new Carrera("Derecho");*/
+		Carrera carrera2=controladorCarrera.crearCarrera("Derecho");
+		
+		/*Carrera carrera3 = new Carrera("Ingenieria Quimica");*/
+		Carrera carrera3=controladorCarrera.crearCarrera("Ingenieria Quimica");
+		
 		
 		List<Materia> materias = new ArrayList<>();
 		
-	    materias.add(new Materia(3400,"Analisis Matematico", true));
-	    
-	    materias.add(new Materia(3500,"Programacion", false));
+		Materia materia;
+		materia=controladorMateria.crearMateria("Analisis Matematico", false);
+	    /*materias.add(new Materia(3400,"Analisis Matematico", true));*/
+	    materias.add(materia);
 		
-	    controladorCarrera.agregarMateria(materias);
+	    materia=controladorMateria.crearMateria("Programacion", false);
+	    /*materias.add(new Materia(3500,"Programacion", false));*/
+	    materias.add(materia);
+	    
+	    
+	    controladorCarrera.agregarMateria(materias,carrera1);
 		
 		Estudiante estudiante1 = new Estudiante("Maria", "Luzzi", 1234, true, carrera1);
 		Estudiante estudiante2 = new Estudiante("Agustina", "Cafiero", 2234, true, carrera2);

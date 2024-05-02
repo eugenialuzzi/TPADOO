@@ -9,16 +9,32 @@ import model.Materia;
  * 
  */
 public class ControladorCarrera {
-
+	
+	/* este controlador no tendria que tener una lista de materias creo*/
 	private List<Materia> materias= new ArrayList<Materia>();
+	
+	private List<Carrera> Carreras= new ArrayList<Carrera>();
+	
+	public Carrera crearCarrera(String NombreDeCarrera) {
+		Carrera carrera=new Carrera(NombreDeCarrera);
+		Carreras.add(carrera);
+		
+		return carrera;
+	}
+	
+
 	
     public ControladorCarrera() {
     }         
    
-	public void agregarMateria(List<Materia> materia) {
-		// Recorremos la lista de materiales que queremos agregar
+	public void agregarMateria(List<Materia> materia, Carrera carrera) {
+		// Recorremos la lista de materias que queremos agregar
         for (Materia m : materia) {
-            this.materias.add(m);
+        	carrera.agregarMateriasAUnaCarrera(m);
+            /*
+              this.materias.add(m);
+              me parece que este metodo no va aca. este controlador no necesita una lista de materias
+             */
 	}
 	}
     public Boolean validarCargaHorariaMax( Carrera carrera) {
