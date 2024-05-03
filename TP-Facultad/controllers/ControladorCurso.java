@@ -31,7 +31,7 @@ public class ControladorCurso {
 	public void agregarListMateria(List<Materia> materias, Curso curso) {
         for (Materia m : materias) {
         	curso.agregarMateriaACurso(m);
-	}
+	}	
         
 	}
     

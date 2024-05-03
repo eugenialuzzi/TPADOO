@@ -112,7 +112,7 @@ public class ProgramaPrincipal {
         for (String cursoInfo : cronograma) {
             System.out.println(cursoInfo);
         }  
-        
+
 		System.out.println(" ");
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
