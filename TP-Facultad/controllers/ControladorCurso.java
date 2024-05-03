@@ -1,15 +1,14 @@
 package controllers;
 
 import java.util.*;
+import java.time.LocalTime;
 
 import model.Aula;
 import model.Carrera;
 import model.Curso;
 import model.Materia;
 
-/**
- * 
- */
+
 public class ControladorCurso {
 
 	private List<Materia> materias = new ArrayList<Materia>();
@@ -20,7 +19,7 @@ public class ControladorCurso {
     public ControladorCurso() {
     }
 
-    public Curso crearCurso(int idCurso, Date horario, Aula aula) {
+    public Curso crearCurso(int idCurso, LocalTime horario, Aula aula) {
     	Curso curso = new Curso(idCurso, horario, aula);
     	cursos.add(curso);
     	return curso;

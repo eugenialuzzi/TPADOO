@@ -1,6 +1,8 @@
 package main;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import controllers.ControladorCarrera;
 import controllers.ControladorCurso;
@@ -79,8 +81,8 @@ public class ProgramaPrincipal {
 		Aula aula1 = new Aula (123, 50);
 		Aula aula2 = new Aula (756, 50);
 		
-		Curso curso1 = controladorCurso.crearCurso(3456, null, aula1);
-		Curso curso2 = controladorCurso.crearCurso(3456, null, aula1);
+		Curso curso1 = controladorCurso.crearCurso(3456, LocalTime.of(18, 30,00), aula1);
+		Curso curso2 = controladorCurso.crearCurso(3456, LocalTime.of(07, 45,00), aula1);
 		
 		controladorCurso.agregarListMateria(materias, curso1);
 		controladorCurso.agregarListMateria(materias, curso2);

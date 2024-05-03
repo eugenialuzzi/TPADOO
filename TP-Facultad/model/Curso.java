@@ -1,14 +1,12 @@
 package model;
 
 import java.util.*;
+import java.time.LocalTime;
 
-/**
- * 
- */
 public class Curso {
 
     private int idCurso;
-    private Date horario;
+    private LocalTime horario;
     private Aula aula;
     private List<Materia> materias;
     
@@ -16,13 +14,14 @@ public class Curso {
 		this.materias = materias;
 	}
 
-	public Curso(int idCurso, Date horario, Aula aula) {
+	public Curso(int idCurso, LocalTime horario, Aula aula) {
 		super();
 		this.idCurso = idCurso;
 		this.horario = horario;
 		this.aula = aula;
 		this.materias = new ArrayList<>();
 	}
+
 
 	public int getIdCurso() {
 		return idCurso;
@@ -32,11 +31,11 @@ public class Curso {
 		this.idCurso = idCurso;
 	}
 
-	public Date getHorario() {
+	public LocalTime getHorario() {
 		return horario;
 	}
 
-	public void setHorario(Date horario) {
+	public void setHorario(LocalTime horario) {
 		this.horario = horario;
 	}
     
@@ -57,7 +56,7 @@ public class Curso {
 	
 	public void agregarMateriaACurso(Materia materia){
     	materias.add(materia);
-    	System.out.println("se agrego la materia " + materia.getNombreMateria() + " a al curso ID: " + idCurso + " aula numero: " + aula.getNumeroAula());
+    	System.out.println("se agrego la materia " + materia.getNombreMateria() + " a al curso ID: " + idCurso + " aula numero: " + aula.getNumeroAula() +"en el horario: " + horario);
     }
 	
 	
