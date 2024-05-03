@@ -38,4 +38,9 @@ public class ControladorEstudiante {
         return null;
     }
 
+    public void AgregarMateriaAprobadaALista(Estudiante estudiante, Materia materia) {
+    	estudiante.agregarMateriaAprobadaALista(materia);
+    	System.out.println("se agrego la materia, "+ materia.getNombreMateria() +"a la lista de aprobadas por el estudiante "+estudiante.getNombre());
+    }
+    
 }

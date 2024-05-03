@@ -22,7 +22,7 @@ public class ControladoInscripcion {
      * @param Estudiante estudiante 
      * @return
      */
-    public Boolean tieneVacante(Estudiante estudiante) {
+    public Boolean tieneVacante(Curso curso) {
         // TODO implement here
         return null;
     }
@@ -42,7 +42,7 @@ public class ControladoInscripcion {
      */
     public boolean validarFechaLimite(Carrera carrera) {
         // TODO implement here
-        return false;
+        return true;
     }
 
     /**
@@ -61,6 +61,7 @@ public class ControladoInscripcion {
      */
     public Boolean validarCorrelativas( Estudiante estudiante,  Materia materia) {
         // TODO implement here
+    	/* hay que armar lo de las correlativodades en la clase materia y en estudiante una lista de las ya cursadas */
         return null;
     }
 
@@ -79,5 +80,28 @@ public class ControladoInscripcion {
         // TODO implement here
         return null;
     }
+
+	public Estudiante inscribir(Estudiante estudiante1, Materia mat2) {
+		
+		Carrera carrera=estudiante1.getCarrera();
+		
+		Materia correlativaAnterior=mat2.getMateriaCorrelativaAnterior();
+		if(correlativaAnterior!=null) {
+			List<Materia> materiasAprobadas=estudiante1.getMateriasAprobadas();
+			// Verificar si el estudiante tiene cursada la correlativa necesaria
+	        if (materiasAprobadas.contains(correlativaAnterior)) {
+	            System.out.println("El alumno " +estudiante1.getNombre()+ " se puede anotar a la materia "+ mat2.getNombreMateria());
+	            estudiante1.getMateriasActuales().add(mat2);
+	        } else {
+	            System.out.println("El alumno NO se puede anotar a la materia "+ mat2.getNombreMateria()+", le faltan correlativas");
+	        }
+		}else {
+			System.out.println("esta materia " +  mat2.getNombreMateria() +" no tiene correlativas anteriores");
+			//aca lo tendria que anotar
+			estudiante1.getMateriasActuales().add(mat2);
+		}
+		return estudiante1;
+		
+	}
 
 }

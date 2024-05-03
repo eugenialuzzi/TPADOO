@@ -29,8 +29,8 @@ public class Estudiante {
     
     private Carrera carrera;
      
-    private Materia materia;
-
+    private List<Materia> materiasActuales=new ArrayList<Materia>();
+    private List<Materia> materiasAprobadas=new ArrayList<Materia>();
 
 	public Estudiante(String nombre, String apellido, int idEstudiante, Boolean estadoEstudiante, Carrera carrera) {
 		/*super(); */
@@ -77,11 +77,28 @@ public class Estudiante {
 	@Override
 	public String toString() {
 		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", idEstudiante=" + idEstudiante
-				+ ", estadoEstudiante=" + estadoEstudiante + ", carrera=" + carrera + ", materia=" + materia + "]";
+				+ ", estadoEstudiante=" + estadoEstudiante + ", carrera=" + carrera + "]";
+	}
+
+	public List<Materia> getMateriasActuales() {
+		return materiasActuales;
+	}
+	
+	public List<Materia> getMateriasAprobadas() {
+		return materiasAprobadas;
+	}
+	
+	public void setMateriasActuales(List<Materia> materiasActuales) {
+		this.materiasActuales = materiasActuales;
 	}
     
     
-    
-	
+    public void agregarMateriaAprobadaALista (Materia materia) {
+    	/* tambien la saca de la lista de cursando actualmente  */
+    	
+    	materiasActuales.remove(materia);
+    	materiasAprobadas.add(materia);
+    	
+    }
 
 }

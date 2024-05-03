@@ -9,8 +9,8 @@ public class Materia {
     private String nombreMateria;
     private boolean esCorrelativa;
     private int cargaHorariaMat;
-
-
+    private Materia materiaCorrelativaAnterior;
+    
 	public int getCodigoMateria() {
 		return codigoMateria;
 	}
@@ -46,12 +46,31 @@ public class Materia {
 		this.esCorrelativa = esCorrelativa;
 		this.cargaHorariaMat = 4;
 	}
+	
+	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa,Materia correlativaanterior) {
+		/*super(); */
+		this.codigoMateria = codigoMateria;
+		this.nombreMateria = nombreMateria;
+		this.esCorrelativa = esCorrelativa;
+		this.cargaHorariaMat = 4;
+		this.materiaCorrelativaAnterior=correlativaanterior;
+	}
 
 	
 
 	public int getCargaHorariaMat() {
 		return cargaHorariaMat;
 	}
+
+	public Materia getMateriaCorrelativaAnterior() {
+		return materiaCorrelativaAnterior;
+	}
+
+	public void setMateriaCorrelativaAnterior(Materia materiaCorrelativaAnterior) {
+		this.materiaCorrelativaAnterior = materiaCorrelativaAnterior;
+	}
+	
+	
 	
     
     
