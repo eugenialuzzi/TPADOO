@@ -38,7 +38,10 @@ public class Docente {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.idDocente = idDocente;
+        System.out.println("se creo el docente: " + nombre + " " + apellido + ", id = " + idDocente);
 	}
+
+    
 	
 	public Curso getCurso() {
 	        return curso;
