@@ -7,27 +7,24 @@ import java.util.*;
  */
 public class Curso {
 
-   
-	/**
-     * Default constructor
-     */
-    public Curso() {
-    }
-
-    /**
-     * 
-     */
     private int idCurso;
-
-    /**
-     * 
-     */
     private Date horario;
-    
-    private Docente docente;
-    
     private Aula aula;
-    public int getIdCurso() {
+    private List<Materia> materias;
+    
+	public void setMaterias(List<Materia> materias) {
+		this.materias = materias;
+	}
+
+	public Curso(int idCurso, Date horario, Aula aula) {
+		super();
+		this.idCurso = idCurso;
+		this.horario = horario;
+		this.aula = aula;
+		this.materias = new ArrayList<>();
+	}
+
+	public int getIdCurso() {
 		return idCurso;
 	}
 
@@ -42,15 +39,8 @@ public class Curso {
 	public void setHorario(Date horario) {
 		this.horario = horario;
 	}
-
-	public Docente getDocente() {
-		return docente;
-	}
-
-	public void setDocente(Docente docente) {
-		this.docente = docente;
-	}
-
+    
+	
 	public Aula getAula() {
 		return aula;
 	}
@@ -58,5 +48,19 @@ public class Curso {
 	public void setAula(Aula aula) {
 		this.aula = aula;
 	}
+
+
+	
+	public List<Materia> getMaterias() {
+        return materias;
+    }
+	
+	public void agregarMateriaACurso(Materia materia){
+    	materias.add(materia);
+    	System.out.println("se agrego la materia " + materia.getNombreMateria() + " a al curso ID: " + idCurso + " aula numero: " + aula.getNumeroAula());
+    }
+	
+	
+	
 
 }
