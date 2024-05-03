@@ -42,7 +42,7 @@ public class Curso {
 		this.horario = horario;
 	}
     
-	
+
 	public Aula getAula() {
 		return aula;
 	}

@@ -97,24 +97,29 @@ public class ProgramaPrincipal {
 		controladorDocente.agregarCursoADocente(cursos, docente);
 		
 		List<Curso> cursosAsignados = controladorDocente.cursosAsignados(2);
-
+		System.out.println(" ");
         // Mostrar los cursos asignados
         System.out.println("Cursos asignados al docente con ID " + 2 + ":");
         for (Curso curso : cursosAsignados) {
             System.out.println("- Curso ID: " + curso.getIdCurso());
-            System.out.println("- Dia: " + curso.getDiaSemana());
-            System.out.println("  Horario: " + curso.getHorario());
-            System.out.println("  Aula: " + curso.getAula());
         }
-	
+        
+        List<String> cronograma = controladorDocente.cronogramaSemanal(2);
+		System.out.println(" ");
+        System.out.println("Cronograma semanal del docente:");
+        System.out.println("DIA " + " - "+ "CURSO "+ "- " + "HORARIO");
 
+        for (String cursoInfo : cronograma) {
+            System.out.println(cursoInfo);
+        }  
+        
 		System.out.println(" ");
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
 		
-		
+	}
+    
 
 	}
 
 
-}

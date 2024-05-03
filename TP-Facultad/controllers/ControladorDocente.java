@@ -50,15 +50,21 @@ public class ControladorDocente implements IExportarArchivo {
     }
     
     
-    public List<Curso> cronogramaSemanal(int idDocente) {
-        // TODO implement here
-        return null;
+    public List<String> cronogramaSemanal(int idDocente) {
+        List<String> cronogramaSemanal = new ArrayList<>();
+        for (Docente docente : docentes) {
+            if (docente.getIdDocente() == idDocente) {
+                for (Curso curso : docente.getCursos()) {
+                    if (curso.getDiaSemana() != null) {
+                        String cursoInfo = curso.getDiaSemana() + " - " +curso.getIdCurso()+ " - " + curso.getHorario();
+                        cronogramaSemanal.add(cursoInfo);
+                    }
+                }
+                break; // Terminamos el bucle porque ya encontramos al docente
+            }
+        }
+        return cronogramaSemanal;
     }
-
-    /**
-     * @param list<Curso>
-     */
-    
    
 
 	@Override
