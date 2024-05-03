@@ -67,7 +67,7 @@ public class ProgramaPrincipal {
 		*/
 		/*Docente docente1 = new Docente ("Esteban", "Lamonte", 35);
 		Docente docente2 = new Docente ("Carmen", "Lopez", 22);*/
-
+		System.out.println(" ");
 		Docente docente;
 		docente = controladorDocente.crearDocente("Esteban", "Lamonte");
 		docente = controladorDocente.crearDocente("Carmen", "Lopez");
