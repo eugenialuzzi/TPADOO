@@ -72,7 +72,7 @@ public class ProgramaPrincipal {
 		*/
 		/*Docente docente1 = new Docente ("Esteban", "Lamonte", 35);
 		Docente docente2 = new Docente ("Carmen", "Lopez", 22);*/
-
+		System.out.println(" ");
 		Docente docente;
 		docente = controladorDocente.crearDocente("Esteban", "Lamonte");
 		docente = controladorDocente.crearDocente("Carmen", "Lopez");
@@ -81,11 +81,19 @@ public class ProgramaPrincipal {
 		Aula aula1 = new Aula (123, 50);
 		Aula aula2 = new Aula (756, 50);
 		
-		Curso curso1 = controladorCurso.crearCurso(3456, LocalTime.of(18, 30,00), aula1);
-		Curso curso2 = controladorCurso.crearCurso(3456, LocalTime.of(07, 45,00), aula1);
+		List<Curso> cursos = new ArrayList<>();
+		
+		Curso curso1= controladorCurso.crearCurso(3456, LocalTime.of(18, 30,00), aula1);
+		Curso curso2 = controladorCurso.crearCurso(3987, LocalTime.of(07, 45,00), aula1);
+		
+		cursos.add(curso1);
+		cursos.add(curso2);
 		
 		controladorCurso.agregarListMateria(materias, curso1);
 		controladorCurso.agregarListMateria(materias, curso2);
+		System.out.println(" ");
+		
+		controladorDocente.agregarCursoADocente(cursos, docente);
 
 		System.out.println(" ");
 		System.out.println(" fin");

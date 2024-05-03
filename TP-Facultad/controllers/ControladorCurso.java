@@ -31,6 +31,7 @@ public class ControladorCurso {
         for (Materia m : materias) {
         	curso.agregarMateriaACurso(m);
 	}
+        
 	}
     
     public void recorrerCurso(Curso curso) {
