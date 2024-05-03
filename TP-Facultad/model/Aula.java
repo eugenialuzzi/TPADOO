@@ -25,7 +25,7 @@ public class Aula {
 
 
     public Aula(int numeroAula, int capacidadMax) {
-		super();
+		
 		this.numeroAula = numeroAula;
 		this.capacidadMax = capacidadMax;
 	}
@@ -35,6 +35,30 @@ public class Aula {
     @Override
 	public String toString() {
 		return "Aula [Numero de aula=" + numeroAula + ", Capacidad maxima=" + capacidadMax + "]";
+	}
+
+
+
+	public int getNumeroAula() {
+		return numeroAula;
+	}
+
+
+
+	public void setNumeroAula(int numeroAula) {
+		this.numeroAula = numeroAula;
+	}
+
+
+
+	public int getCapacidadMax() {
+		return capacidadMax;
+	}
+
+
+
+	public void setCapacidadMax(int capacidadMax) {
+		this.capacidadMax = capacidadMax;
 	}
 
 }
