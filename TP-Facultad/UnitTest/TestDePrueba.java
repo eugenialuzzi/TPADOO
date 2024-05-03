@@ -25,10 +25,15 @@ public class TestDePrueba {
 
 			ControladorEstudiante controladorEstudiante = ControladorEstudiante.getInstancia();
 		
-				controladorEstudiante.altaEstudiante(estudiante1);
+			controladorEstudiante.altaEstudiante(estudiante1);
 		
-				List<Estudiante> listaEstudiantes = controladorEstudiante.getListaEstudiantes();
+			List<Estudiante> listaEstudiantes = controladorEstudiante.getListaEstudiantes();
 
+
+        	System.out.println("Nuevo estudiante:");
+        	System.out.println("NOMBRE: "+ controladorEstudiante.getListaEstudiantes().get(0).getNombre()  + " " + controladorEstudiante.getListaEstudiantes().get(0).getApellido());
+        	System.out.println("DNI: " + controladorEstudiante.getListaEstudiantes().get(0).getIdEstudiante());
+			 
 
 			}
 	
