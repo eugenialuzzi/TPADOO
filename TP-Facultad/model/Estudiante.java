@@ -33,12 +33,14 @@ public class Estudiante {
 
 
 	public Estudiante(String nombre, String apellido, int idEstudiante, Boolean estadoEstudiante, Carrera carrera) {
-		super();
+		/*super(); */
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.idEstudiante = idEstudiante;
 		this.estadoEstudiante = estadoEstudiante;
 		this.carrera = carrera;
+		
+		System.out.println("se creo el estudiante: " + nombre + " " + apellido + ", id = " + idEstudiante +  ", estudia la carrera "+ carrera.getNombreDeCarrera());;
 	}
 
 	public String getNombre() {
