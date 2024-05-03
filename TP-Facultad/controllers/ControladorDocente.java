@@ -39,14 +39,17 @@ public class ControladorDocente implements IExportarArchivo {
 	}
 
     public List<Curso> cursosAsignados(int idDocente) {
-        // TODO implement here
-        return null;
+        List<Curso> cursosAsignados = new ArrayList<>();
+        for (Docente docente : docentes) {
+            if (docente.getIdDocente() == idDocente) {
+                cursosAsignados = docente.getCursos();
+                break; // Terminamos el bucle porque ya encontramos al docente
+            }
+        }
+        return cursosAsignados;
     }
-
-    /**
-     * @param idDocente 
-     * @return
-     */
+    
+    
     public List<Curso> cronogramaSemanal(int idDocente) {
         // TODO implement here
         return null;

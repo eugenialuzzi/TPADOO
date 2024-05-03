@@ -8,17 +8,20 @@ public class Curso {
     private int idCurso;
     private LocalTime horario;
     private Aula aula;
+    private DiaSemana diaSemana;
     private List<Materia> materias;
+
     
 	public void setMaterias(List<Materia> materias) {
 		this.materias = materias;
 	}
 
-	public Curso(int idCurso, LocalTime horario, Aula aula) {
+	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula) {
 		super();
 		this.idCurso = idCurso;
 		this.horario = horario;
 		this.aula = aula;
+		this.diaSemana = diaSemana;
 		this.materias = new ArrayList<>();
 	}
 
@@ -50,6 +53,14 @@ public class Curso {
 
 
 	
+	public DiaSemana getDiaSemana() {
+		return diaSemana;
+	}
+
+	public void setDiaSemana(DiaSemana diaSemana) {
+		this.diaSemana = diaSemana;
+	}
+
 	public List<Materia> getMaterias() {
         return materias;
     }
@@ -59,7 +70,7 @@ public class Curso {
     	System.out.println("se agrego la materia " + materia.getNombreMateria() + " a al curso ID: " + idCurso + " aula numero: " + aula.getNumeroAula() +"en el horario: " + horario);
     }
 	
-	
+
 	
 
 }

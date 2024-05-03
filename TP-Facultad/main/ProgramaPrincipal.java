@@ -12,6 +12,7 @@ import controllers.ControladorMateria;
 import model.Aula;
 import model.Carrera;
 import model.Curso;
+import model.DiaSemana;
 import model.Docente;
 import model.Estudiante;
 import model.Materia;
@@ -83,8 +84,8 @@ public class ProgramaPrincipal {
 		
 		List<Curso> cursos = new ArrayList<>();
 		
-		Curso curso1= controladorCurso.crearCurso(3456, LocalTime.of(18, 30,00), aula1);
-		Curso curso2 = controladorCurso.crearCurso(3987, LocalTime.of(07, 45,00), aula1);
+		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1);
+		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1);
 		
 		cursos.add(curso1);
 		cursos.add(curso2);
@@ -94,10 +95,24 @@ public class ProgramaPrincipal {
 		System.out.println(" ");
 		
 		controladorDocente.agregarCursoADocente(cursos, docente);
+		
+		List<Curso> cursosAsignados = controladorDocente.cursosAsignados(2);
+
+        // Mostrar los cursos asignados
+        System.out.println("Cursos asignados al docente con ID " + 2 + ":");
+        for (Curso curso : cursosAsignados) {
+            System.out.println("- Curso ID: " + curso.getIdCurso());
+            System.out.println("- Dia: " + curso.getDiaSemana());
+            System.out.println("  Horario: " + curso.getHorario());
+            System.out.println("  Aula: " + curso.getAula());
+        }
+	
 
 		System.out.println(" ");
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
+		
+		
 
 	}
 
