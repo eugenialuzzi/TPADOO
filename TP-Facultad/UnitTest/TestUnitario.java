@@ -9,6 +9,11 @@ import model.Estudiante;
 
 public class TestUnitario {
 
+
+	/*
+	 * @Test
+	 */
+
     public void testAltaEstudiante() {
 
         Carrera carrera1 = new Carrera("Ingenieria en Sistemas");
@@ -29,6 +34,15 @@ public class TestUnitario {
 	
 			List<Estudiante> listaEstudiantes = controladorEstudiante.getListaEstudiantes();
 
+
+			/*
+			 * Assert.assertEquals(1, estudiantes.size());
+        	Assert.assertEquals(estudiante, estudiantes.get(0));
+        	System.out.println("Nuevo estudiante:");
+        	System.out.println("NOMBRE: "+ ControladorEstudiante.getListaEstudiantes().get(0).getNombre()  + " " + ControladorEstudiante.getListaEstudiantes().get(0).getApellido());
+        	System.out.println("DNI: " +ControladorEstudiante.getListaEstudiantes().get(0).getIdEstudiante());
+			 * 
+			 */
 
 		}
     
