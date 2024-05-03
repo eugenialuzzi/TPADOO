@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import controllers.ControladorCarrera;
+import controllers.ControladorDocente;
 import controllers.ControladorEstudiante;
 import controllers.ControladorMateria;
 import model.Aula;
@@ -16,6 +17,7 @@ public class ProgramaPrincipal {
 	public static void main(String[] args) {
 		ControladorCarrera controladorCarrera = new ControladorCarrera();
 		ControladorMateria controladorMateria = new ControladorMateria();
+		ControladorDocente controladorDocente = new ControladorDocente();
 		ControladorEstudiante controladorEstudiante = new ControladorEstudiante();  /*probar despues
 		
 		/*Carrera carrera1 = new Carrera("Ingenieria en Sistemas"); */
@@ -46,15 +48,15 @@ public class ProgramaPrincipal {
 	    
 	    Estudiante estudiante;
 		/*Estudiante estudiante1 = new Estudiante("Maria", "Luzzi", 1234, true, carrera1);*/
-	    estudiante=controladorEstudiante.crearEtudiante("Maria", "Luzzi", true, carrera1);
+	    estudiante=controladorEstudiante.crearEstudiante("Maria", "Luzzi", true, carrera1);
 		
-	    estudiante=controladorEstudiante.crearEtudiante("Agustina","Cafiero", true, carrera2); 
+	    estudiante=controladorEstudiante.crearEstudiante("Agustina","Cafiero", true, carrera2); 
 		/* Estudiante estudiante2 = new Estudiante("Agustina", "Cafiero", 2234, true, carrera2); */
 		
-		estudiante=controladorEstudiante.crearEtudiante("Yancamil", "Gomez Lopez", true, carrera3);
+		estudiante=controladorEstudiante.crearEstudiante("Yancamil", "Gomez Lopez", true, carrera3);
 		/*Estudiante estudiante3 = new Estudiante("Yancamil", "Gomez Lopez", 7654, true, carrera3);*/
 		
-		estudiante=controladorEstudiante.crearEtudiante("Jose", "Sparks", true, carrera1);
+		estudiante=controladorEstudiante.crearEstudiante("Jose", "Sparks", true, carrera1);
 		/*Estudiante estudiante4 = new Estudiante("Jose", "Sparks", 9987, true, carrera1);*/
 	
 		/*
@@ -63,8 +65,12 @@ public class ProgramaPrincipal {
 		estudiante3.setCarrera(carrera3);
 		estudiante4.setCarrera(carrera1);
 		*/
-		Docente docente1 = new Docente ("Esteban", "Lamonte", 35);
-		Docente docente2 = new Docente ("Carmen", "Lopez", 22);
+		/*Docente docente1 = new Docente ("Esteban", "Lamonte", 35);
+		Docente docente2 = new Docente ("Carmen", "Lopez", 22);*/
+
+		Docente docente;
+		docente = controladorDocente.crearDocente("Esteban", "Lamonte");
+		docente = controladorDocente.crearDocente("Carmen", "Lopez");
 		
 
 		Aula aula = new Aula (123, 50);
