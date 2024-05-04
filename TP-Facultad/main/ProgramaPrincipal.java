@@ -13,6 +13,7 @@ import controllers.ControladorMateria;
 import model.Aula;
 import model.Carrera;
 import model.Curso;
+import model.DiaSemana;
 import model.Docente;
 import model.Estudiante;
 import model.Materia;
@@ -86,8 +87,8 @@ public class ProgramaPrincipal {
 		
 		List<Curso> cursos = new ArrayList<>();
 		
-		Curso curso1= controladorCurso.crearCurso(3456, LocalTime.of(18, 30,00), aula1);
-		Curso curso2 = controladorCurso.crearCurso(3987, LocalTime.of(07, 45,00), aula1);
+		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1);
+		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1);
 		
 		
 	
@@ -100,6 +101,7 @@ public class ProgramaPrincipal {
 		
 		controladorDocente.agregarCursoADocente(cursos, docente);
 		
+
 		
 		System.out.println("el aula del curso1 es "+curso1.getAula() + " y su capacidad es "+curso1.getAula().getCapacidadMax());
 		;
@@ -133,11 +135,31 @@ public class ProgramaPrincipal {
 		/*System.out.println("el estudiante es "+estudiante.getApellido()+ " "+estudiante.getNombre());*/
 		controladorInscripcion.inscribir(estudiante, mat1);
 		
+
+		List<Curso> cursosAsignados = controladorDocente.cursosAsignados(2);
+		System.out.println(" ");
+        // Mostrar los cursos asignados
+        System.out.println("Cursos asignados al docente con ID " + 2 + ":");
+        for (Curso curso : cursosAsignados) {
+            System.out.println("- Curso ID: " + curso.getIdCurso());
+        }
+        
+        List<String> cronograma = controladorDocente.cronogramaSemanal(2);
+		System.out.println(" ");
+        System.out.println("Cronograma semanal del docente:");
+        System.out.println("DIA " + " - "+ "CURSO "+ "- " + "HORARIO");
+
+        for (String cursoInfo : cronograma) {
+            System.out.println(cursoInfo);
+        }  
+
 		System.out.println(" ");
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
+		
+	}
+    
 
 	}
 
 
-}
