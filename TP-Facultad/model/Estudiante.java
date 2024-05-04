@@ -68,12 +68,12 @@ public class Estudiante {
 		
 	}
 	    
-	
+	/*
     public boolean ValidarCorrelactividad(Carrera carrera,  Materia materia) {
-    	 List<Materia> materiasCorrelativas = carrera.Correlatividad(materia);
+    	 Materia materiaCorrelativa = carrera.Correlatividad(materia);
         return false;
     }
-
+*/
 	@Override
 	public String toString() {
 		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", idEstudiante=" + idEstudiante
@@ -93,6 +93,18 @@ public class Estudiante {
 	}
     
     
+	public boolean yaAproboLaMateria (Materia materia) {
+		if (materia==null)
+			return true;
+		
+		if (materiasAprobadas.contains(materia) ) {
+			return true;
+		}
+			else 		{
+				return false;
+			}
+	}
+	
     public void agregarMateriaAprobadaALista (Materia materia) {
     	/* tambien la saca de la lista de cursando actualmente  */
     	

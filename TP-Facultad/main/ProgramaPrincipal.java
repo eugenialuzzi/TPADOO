@@ -4,6 +4,7 @@ import java.util.List;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import controllers.ControladoInscripcion;
 import controllers.ControladorCarrera;
 import controllers.ControladorCurso;
 import controllers.ControladorDocente;
@@ -24,6 +25,8 @@ public class ProgramaPrincipal {
 		ControladorDocente controladorDocente = new ControladorDocente();
 		ControladorEstudiante controladorEstudiante = new ControladorEstudiante();  /*probar despues
 		/*Carrera carrera1 = new Carrera("Ingenieria en Sistemas"); */
+		ControladoInscripcion controladorInscripcion = new ControladoInscripcion();
+		
 		ControladorCurso controladorCurso = new ControladorCurso();
 		
 		Carrera carrera1=controladorCarrera.crearCarrera("Ingenieria en Sistemas");
@@ -86,6 +89,8 @@ public class ProgramaPrincipal {
 		Curso curso1= controladorCurso.crearCurso(3456, LocalTime.of(18, 30,00), aula1);
 		Curso curso2 = controladorCurso.crearCurso(3987, LocalTime.of(07, 45,00), aula1);
 		
+		
+	
 		cursos.add(curso1);
 		cursos.add(curso2);
 		
@@ -94,7 +99,40 @@ public class ProgramaPrincipal {
 		System.out.println(" ");
 		
 		controladorDocente.agregarCursoADocente(cursos, docente);
-
+		
+		
+		System.out.println("el aula del curso1 es "+curso1.getAula() + " y su capacidad es "+curso1.getAula().getCapacidadMax());
+		;
+		System.out.println("");
+		System.out.println("tiene vacante?"+controladorCurso.tieneVacante(curso1));
+		
+		
+		System.out.println("su capacidad es "+controladorCurso.verCapacidadAula(curso1));
+		
+		
+		//creo las materias para ing en sistemas(carrera1)
+		
+		Materia mat1=controladorMateria.crearMateria("fisica 1",false,null);
+		materias.clear();
+		materias.add(mat1);
+		//fisica dos tiene correlativa para ing en sistemas, pero no para derecho
+		Materia mat2=controladorMateria.crearMateria("fisica 2",true,mat1);//fisica 2 para ing en sistemas
+		materias.add(mat2);
+		controladorCarrera.agregarMateria(materias,carrera1);
+		
+		materias.clear();
+		Materia mat3=controladorMateria.crearMateria("filosofia",false,null);
+		Materia mat4=controladorMateria.crearMateria("fisica 1",false,null);
+		Materia mat5=controladorMateria.crearMateria("fisica 2",false,null);
+		materias.add(mat3);
+		materias.add(mat4);
+		materias.add(mat5);
+		controladorCarrera.agregarMateria(materias,carrera2);
+		
+		controladorInscripcion.inscribir(estudiante, mat2);
+		/*System.out.println("el estudiante es "+estudiante.getApellido()+ " "+estudiante.getNombre());*/
+		controladorInscripcion.inscribir(estudiante, mat1);
+		
 		System.out.println(" ");
 		System.out.println(" fin");
 		// TODO Auto-generated method stub

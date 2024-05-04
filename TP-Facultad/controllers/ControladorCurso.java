@@ -26,6 +26,11 @@ public class ControladorCurso {
     	
     }
     
+
+    public Boolean tieneVacante(Curso curso) {
+    	
+    	return curso.tieneVacante(curso);
+    }
     
 	public void agregarListMateria(List<Materia> materias, Curso curso) {
         for (Materia m : materias) {
@@ -34,6 +39,12 @@ public class ControladorCurso {
         
 	}
     
+	public int verCapacidadAula(Curso curso) {
+		int capacidad;
+		capacidad=curso.getAula().getCapacidadMax();
+		return capacidad;
+	}
+	
     public void recorrerCurso(Curso curso) {
         // TODO implement here
         

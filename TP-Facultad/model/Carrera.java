@@ -54,9 +54,9 @@ public class Carrera {
     }
     
     
-    public List<Materia> Correlatividad(Materia materia) {
+    public Materia Correlatividad(Materia materia) {
         // TODO implement here
-        return null;
+        return materia.getMateriaCorrelativaAnterior();
     }
 
     
