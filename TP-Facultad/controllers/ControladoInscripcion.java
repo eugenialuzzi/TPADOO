@@ -1,5 +1,7 @@
 package controllers;
 
+import java.time.Clock;
+import java.time.LocalDate;
 import java.util.*;
 
 import model.Carrera;
@@ -11,6 +13,8 @@ import model.Materia;
  * 
  */
 public class ControladoInscripcion {
+	
+	private Clock reloj; 
 	ControladorCurso controladorCurso=new  ControladorCurso();
     /**
      * Default constructor
@@ -41,7 +45,12 @@ public class ControladoInscripcion {
      * @return
      */
     public boolean validarFechaLimite(Carrera carrera) {
-        // TODO implement here
+    	LocalDate fechaLimite = null;
+        if (fechaLimite.isBefore(LocalDate.now(reloj))) {
+        	return true;
+        }
+    	
+    	
         return true;
     }
 
@@ -83,33 +92,80 @@ public class ControladoInscripcion {
      * @param Estudiante estudiante 
      * @return
      */
-    public Integer calcularCargaHoraria(Estudiante estudiante) {
-        // TODO implement here
-        return null;
+    private boolean chequearCargaHoraria(Estudiante estudiante, Materia materia) {
+        Carrera carrera=estudiante.getCarrera();
+    	int cargaHorariamaxima=carrera.getCargaHorariaMax();
+    	int cargaHorariaActual=estudiante.getCargaHorariaActual(); 
+    	int cargaHorariaMateriaNueva=materia.getCargaHorariaMat();
+    	if((cargaHorariaActual + cargaHorariaMateriaNueva)>cargaHorariamaxima) {
+    		System.out.println("se esta excediendo la cantidad de horas maximas de cursada");
+    		return false;
+    	}
+    	else {
+    		return true;
+    	}
     }
 
-	public Estudiante inscribir(Estudiante estudiante1, Materia mat2) {
+	public Estudiante inscribir(Estudiante estudiante1, Materia materia,Curso curso) {
+		boolean bandera =true;
 		
-		Carrera carrera=estudiante1.getCarrera();
+		/* hay que hacer lo de la fecha limite */
+		
+		if (chequearCorrelativas(estudiante1,materia)==false) {
+			bandera=false;
+		}
+		
+		if (curso.tieneVacante(curso)==false) {
+			bandera=false;
+		}
+		if (chequearCargaHoraria(estudiante1,materia)==false) {
+			bandera=false;
+		}
+		
+		//Carrera carrera=estudiante1.getCarrera();
+		
+		//Materia correlativaAnterior=mat2.getMateriaCorrelativaAnterior();
+		//if(correlativaAnterior!=null) {
+			//List<Materia> materiasAprobadas=estudiante1.getMateriasAprobadas();
+			/*Verificar si el estudiante tiene cursada la correlativa necesaria*/
+	        //if (materiasAprobadas.contains(correlativaAnterior)) {
+	          //  System.out.println("El alumno " +estudiante1.getNombre()+ " se puede anotar a la materia "+ mat2.getNombreMateria());
+	            /*esto hay que cambiarlo no lo puedo anotar a una materia sino a un curso especifico */
+	            //estudiante1.getMateriasActuales().add(mat2);
+	        //} else {
+	          //  System.out.println("El alumno NO se puede anotar a la materia "+ mat2.getNombreMateria()+", le faltan correlativas");
+	        //}
+		//}else {
+			//System.out.println("esta materia " +  mat2.getNombreMateria() +" no tiene correlativas anteriores");
+			/*aca lo tendria que anotar */
+			/* esto hay que sacarlo no lo puedo anotar a una materia sino a un curso especifico  */
+			//estudiante1.getMateriasActuales().add(mat2);
+		//}
+		
+		return estudiante1;
+		
+	}
+	private boolean chequearCorrelativas(Estudiante estudiante1, Materia mat2) {
 		
 		Materia correlativaAnterior=mat2.getMateriaCorrelativaAnterior();
 		if(correlativaAnterior!=null) {
 			List<Materia> materiasAprobadas=estudiante1.getMateriasAprobadas();
 			// Verificar si el estudiante tiene cursada la correlativa necesaria
 	        if (materiasAprobadas.contains(correlativaAnterior)) {
-	            System.out.println("El alumno " +estudiante1.getNombre()+ " se puede anotar a la materia "+ mat2.getNombreMateria());
-	            /*esto hay que cambiarlo no lo puedo anotar a una materia sino a un curso especifico */
-	            estudiante1.getMateriasActuales().add(mat2);
+	            System.out.println("El alumno " +estudiante1.getNombre()+ 
+	            		" se puede anotar a la materia "+ mat2.getNombreMateria());
+	            return true;
 	        } else {
-	            System.out.println("El alumno NO se puede anotar a la materia "+ mat2.getNombreMateria()+", le faltan correlativas");
+	            System.out.println("El alumno NO se puede anotar a la materia "
+	            		+ mat2.getNombreMateria()+", le faltan correlativas");
+	            return false;
 	        }
 		}else {
-			System.out.println("esta materia " +  mat2.getNombreMateria() +" no tiene correlativas anteriores");
-			//aca lo tendria que anotar
-			/* esto hay que sacarlo no lo puedo anotar a una materia sino a un curso especifico  */
-			estudiante1.getMateriasActuales().add(mat2);
+			System.out.println("esta materia " +  mat2.getNombreMateria() +
+					" no tiene correlativas anteriores");
+			return true;
+			
 		}
-		return estudiante1;
 		
 	}
 

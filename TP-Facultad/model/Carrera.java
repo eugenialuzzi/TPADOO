@@ -7,7 +7,8 @@ public class Carrera {
 	private String nombreDeCarrera;
     private int cargaHorariaMax;
     private List<Materia> materias;
-    
+   /* faltan una clase facultad a la que referenciar creo
+    private Facultad facultad; */
 	
     
     

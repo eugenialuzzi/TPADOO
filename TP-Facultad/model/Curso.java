@@ -10,7 +10,8 @@ public class Curso {
     private Aula aula;
     private DiaSemana diaSemana;
     private List<Materia> materias;
-
+    private String turno;
+    
     private int lugaresDisponibles;
     private int cantidadDeInscriptos;
 
@@ -77,7 +78,14 @@ public class Curso {
 		cantidadDeInscriptos=numeroDeInscriptos;
 		
 	}
- 
+	 
+	 public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
+	} 
 	
 	public DiaSemana getDiaSemana() {
 		return diaSemana;

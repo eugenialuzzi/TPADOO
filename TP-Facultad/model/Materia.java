@@ -10,6 +10,7 @@ public class Materia {
     private boolean esCorrelativa;
     private int cargaHorariaMat;
     private Materia materiaCorrelativaAnterior;
+    private Materia materiaCorrelativaSiguiente;
     
 	public int getCodigoMateria() {
 		return codigoMateria;
@@ -71,6 +72,14 @@ public class Materia {
 	}
 	
 	
+	public Materia getMateriaCorrelativaSiguiente() {
+		return materiaCorrelativaSiguiente;
+	}
+
+	public void setMateriaCorrelativaSiguiente(Materia materiaCorrelativaSiguiente) {
+		this.materiaCorrelativaSiguiente = materiaCorrelativaSiguiente;
+	}
+	  
 	
     
     

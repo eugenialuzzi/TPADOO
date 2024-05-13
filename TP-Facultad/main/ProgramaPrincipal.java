@@ -131,11 +131,12 @@ public class ProgramaPrincipal {
 		materias.add(mat5);
 		controladorCarrera.agregarMateria(materias,carrera2);
 		
-		controladorInscripcion.inscribir(estudiante, mat2);
+		controladorInscripcion.inscribir(estudiante, mat2,curso1);
 		/*System.out.println("el estudiante es "+estudiante.getApellido()+ " "+estudiante.getNombre());*/
-		controladorInscripcion.inscribir(estudiante, mat1);
+		controladorInscripcion.inscribir(estudiante, mat1,curso2);
 		
-
+		/* hacer paquetes de materias de primer año */
+		
 		List<Curso> cursosAsignados = controladorDocente.cursosAsignados(2);
 		System.out.println(" ");
         // Mostrar los cursos asignados

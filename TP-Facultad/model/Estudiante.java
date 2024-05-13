@@ -26,6 +26,7 @@ public class Estudiante {
      */
     private Boolean estadoEstudiante;
 
+    private int cargaHorariaActual=0;
     
     private Carrera carrera;
      
@@ -112,5 +113,26 @@ public class Estudiante {
     	materiasAprobadas.add(materia);
     	
     }
-
+    public int getCargaHorariaActual() {
+    	int total=0;
+    	for (Materia materia:materiasActuales ) {
+    		int parcial=materia.getCargaHorariaMat();
+    		total=total+parcial;
+    	}
+    	setCargaHorariaActual(total);
+    	return cargaHorariaActual;
+    }
+    
+    public void setCargaHorariaActual(int cargaHoraria) {
+    	cargaHorariaActual=cargaHoraria;
+    	
+    }
+    
+ 
+    
+    
+    
+    
+    
+    
 }
