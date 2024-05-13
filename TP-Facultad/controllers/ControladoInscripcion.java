@@ -35,23 +35,27 @@ public class ControladoInscripcion {
      * @param Materia materia 
      * @return
      */
-    public List<Curso> mostrarCursosDisponibles( Materia materia) {
-        // TODO implement here
-        return null;
+    public void mostrarCursosDisponibles( Materia materia) {
+    	materia.getCursosDisponibles();
+       
     }
 
     /**
      * @param Carrera carrera 
      * @return
      */
-    public boolean validarFechaLimite(Carrera carrera) {
-    	LocalDate fechaLimite = null;
+    
+    private boolean validarFechaLimite(Estudiante estudiante) {
+    	
+    	Carrera carrera=estudiante.getCarrera();
+    	LocalDate fechaLimite = carrera.getFacultad().getfechaLimite();
         if (fechaLimite.isBefore(LocalDate.now(reloj))) {
         	return true;
+        }  	
+        else {
+        	System.out.println("la fecha limite de las inscripciones ya ha pasado");
+        	return false;
         }
-    	
-    	
-        return true;
     }
 
     /**
@@ -109,7 +113,9 @@ public class ControladoInscripcion {
 	public Estudiante inscribir(Estudiante estudiante1, Materia materia,Curso curso) {
 		boolean bandera =true;
 		
-		/* hay que hacer lo de la fecha limite */
+		if (validarFechaLimite(estudiante1)==false ) {
+			bandera=false;
+		}
 		
 		if (chequearCorrelativas(estudiante1,materia)==false) {
 			bandera=false;
@@ -121,6 +127,16 @@ public class ControladoInscripcion {
 		if (chequearCargaHoraria(estudiante1,materia)==false) {
 			bandera=false;
 		}
+		
+		/* aca se agrega al alumno al curso y la materia el alumno */
+		if (bandera==true) {
+			
+			int numeroActual=curso.getcantidadDeInscriptos();
+			curso.setcantidadDeInscriptos(numeroActual+1);
+			
+			estudiante1.agregarMateriaQueEstaCursando(materia);
+		}
+		 /* falta la parte del cobro hay que sumarle esa materia nueva al costo del alumno */
 		
 		//Carrera carrera=estudiante1.getCarrera();
 		

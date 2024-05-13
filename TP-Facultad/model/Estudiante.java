@@ -113,6 +113,17 @@ public class Estudiante {
     	materiasAprobadas.add(materia);
     	
     }
+    
+    public void agregarMateriaQueEstaCursando (Materia materia) {
+    	materiasActuales.add(materia);
+    	
+    }
+    
+    public void quitarMateriaQueEstaCursando (Materia materia) {
+    	materiasActuales.remove(materia);
+    }
+    
+    
     public int getCargaHorariaActual() {
     	int total=0;
     	for (Materia materia:materiasActuales ) {

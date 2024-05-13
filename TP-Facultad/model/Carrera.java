@@ -7,8 +7,7 @@ public class Carrera {
 	private String nombreDeCarrera;
     private int cargaHorariaMax;
     private List<Materia> materias;
-   /* faltan una clase facultad a la que referenciar creo
-    private Facultad facultad; */
+    private Facultad facultad;
 	
     
     
@@ -50,6 +49,14 @@ public class Carrera {
 	}
 	
 
+	 public Facultad getFacultad() {
+			return facultad;
+		}
+
+		public void setFacultad(Facultad facultad) {
+			this.facultad = facultad;
+		}
+	
     public List<Materia> getMaterias() {
         return materias;
     }

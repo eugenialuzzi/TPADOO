@@ -11,6 +11,7 @@ public class Materia {
     private int cargaHorariaMat;
     private Materia materiaCorrelativaAnterior;
     private Materia materiaCorrelativaSiguiente;
+    private List<Curso> cursosDeLaMateria;
     
 	public int getCodigoMateria() {
 		return codigoMateria;
@@ -80,6 +81,31 @@ public class Materia {
 		this.materiaCorrelativaSiguiente = materiaCorrelativaSiguiente;
 	}
 	  
+	/*
+	 revisar si es necesario
+	public void getTodosLosCursosDeLaMateria() {
+		for (Curso c:cursosDeLaMateria) {
+			System.out.print("el id es: "+ +"se dicta el dia");
+			c.getIdCurso();
+			c.getDiaSemana();
+			c.getHorario();
+			c.getAula();
+			c.getcantidadDeInscriptos();
+			
+		}
+		
+	*/
+	
+	public void getCursosDisponibles() {
+		for (Curso c:cursosDeLaMateria) {
+			if (c.tieneVacante(c)) {
+				System.out.println("el curso" + c.getIdCurso() +
+						"de los dias" + c.getHorario() + " " + 
+						c.getDiaSemana() + "tiene vacantes");
+			}
+		}
+	}
+
 	
     
     
