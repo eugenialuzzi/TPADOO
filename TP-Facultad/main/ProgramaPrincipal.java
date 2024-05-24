@@ -16,6 +16,7 @@ import model.Curso;
 import model.DiaSemana;
 import model.Docente;
 import model.Estudiante;
+import model.Facultad;
 import model.Materia;
 
 public class ProgramaPrincipal {
@@ -50,6 +51,9 @@ public class ProgramaPrincipal {
 	    /*materias.add(new Materia(3500,"Programacion", false));*/
 	    materias.add(materia);
 	    
+	    Facultad facultad=new Facultad();
+	    facultad.setNombreDeFacultad("Facultad de Ingenieria");
+	    carrera1.setFacultad(facultad);
 	    
 	    controladorCarrera.agregarMateria(materias,carrera1);
 		

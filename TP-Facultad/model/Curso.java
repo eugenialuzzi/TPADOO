@@ -11,6 +11,7 @@ public class Curso {
     private DiaSemana diaSemana;
     private List<Materia> materias;
     private String turno;
+    private Materia materia;
     
     private int lugaresDisponibles;
     private int cantidadDeInscriptos;
@@ -24,6 +25,7 @@ public class Curso {
 	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula) {
 		super();
 		this.idCurso = idCurso;
+		
 		this.horario = horario;
 		this.aula = aula;
 		this.diaSemana = diaSemana;
@@ -114,7 +116,7 @@ public class Curso {
 		return true;
 		}
 		else {
-			System.out.println("el curso " + curso.getIdCurso() + " ya esta lleno, no es posible la incripcion" ) ;
+			System.out.println("el curso " + curso.getIdCurso() + " ya esta lleno, no es posible la inscripcion" ) ;
 			return false; 
 		}
 	}  

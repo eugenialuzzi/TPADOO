@@ -43,4 +43,16 @@ public class ControladorEstudiante {
     	System.out.println("se agrego la materia, "+ materia.getNombreMateria() +"a la lista de aprobadas por el estudiante "+estudiante.getNombre());
     }
     
+    private Estudiante buscarEstudiantePorId(int idEstudianteBuscado) {
+    	int id;
+    	for (Estudiante estudiante: estudiantes){
+    		id=estudiante.getIdEstudiante();
+    		if (id==idEstudianteBuscado) {
+    			return estudiante;
+    		}else {
+    			System.out.println("no se encontro un estudiante que corresponda a ese id");		
+    		}	
+    	}
+    	return null;
+    	}
 }

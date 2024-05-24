@@ -7,7 +7,8 @@ public class Facultad {
 
 	private String nombre;
 	
-	private LocalDate fechaLimite;
+	private LocalDate fechaLimite=LocalDate.parse("2030-12-12");;
+	
 	
 	private List<Carrera> carreras;
 	

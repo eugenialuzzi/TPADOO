@@ -2,6 +2,7 @@ package controllers;
 
 import java.time.Clock;
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 import model.Carrera;
@@ -14,7 +15,24 @@ import model.Materia;
  */
 public class ControladoInscripcion {
 	
-	private Clock reloj; 
+	private Clock reloj=Clock.systemDefaultZone();
+	
+	///Clock clock = Clock.systemDefaultZone();
+	/// este reloj hay que meterlo en otro lado tal vez ??
+	
+	/*
+	private static ZonedDateTime NOW = ZonedDateTime.of (
+			year:2022,
+			month:6,
+			dayOfMonth:15,
+			hour:12,
+			minute:0,
+			second:0,
+			nanoOfSecond:0,
+			ZoneId.of(zoneId:"GMT")
+			);
+		
+	*/
 	ControladorCurso controladorCurso=new  ControladorCurso();
     /**
      * Default constructor

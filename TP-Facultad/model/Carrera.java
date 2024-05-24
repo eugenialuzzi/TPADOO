@@ -53,7 +53,7 @@ public class Carrera {
 			return facultad;
 		}
 
-		public void setFacultad(Facultad facultad) {
+	public void setFacultad(Facultad facultad) {
 			this.facultad = facultad;
 		}
 	
