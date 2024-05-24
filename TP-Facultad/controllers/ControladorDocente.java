@@ -73,4 +73,16 @@ public class ControladorDocente implements IExportarArchivo {
 		
 	}
 
+	private Docente buscarDocentePorSuId(int idDocente) {
+		
+		for(Docente docente:docentes) {
+			int idActual=docente.getIdDocente();
+			if (idActual==idDocente) {
+				return docente;
+			}else {
+				System.out.println("no se encontro un docente con esa id");
+			}	
+		}
+		return null;
+	}
 }

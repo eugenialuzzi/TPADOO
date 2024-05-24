@@ -46,10 +46,12 @@ public class ControladorMateria {
     	return materia;
     }
     
-    
+    ///ControladorCurso controladorCurso = new ControladorCurso();
+    ControladorCurso controladorCurso = ControladorCurso.getInstance();
     public List<Curso> obtenerCursos( Materia materia) {
-        // TODO implement here
-        return null;
+    	List<Curso> CursosDeUnaMateria=new ArrayList<Curso>();
+    	controladorCurso.buscarCursosDeUnaMateria(materia);
+        return CursosDeUnaMateria;
     }
    
 }
