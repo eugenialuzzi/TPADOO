@@ -1,7 +1,9 @@
 package controllers;
 
 import java.time.Clock;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
 
@@ -15,9 +17,12 @@ import model.Materia;
  */
 public class ControladoInscripcion {
 	
-	private Clock reloj=Clock.systemDefaultZone();
+	///private Clock reloj=Clock.systemDefaultZone();
 	
-	///Clock clock = Clock.systemDefaultZone();
+	///private Clock relojFijo = Clock.fixed(Instant.parse("2018-04-29T10:15:30.00Z"));
+	
+	private Clock relojFijo = Clock.fixed(Instant.parse("2025-04-29T10:15:30.00Z"),ZoneId.of("Asia/Calcutta"));
+	
 	/// este reloj hay que meterlo en otro lado tal vez ??
 	
 	/*
@@ -67,11 +72,13 @@ public class ControladoInscripcion {
     	
     	Carrera carrera=estudiante.getCarrera();
     	LocalDate fechaLimite = carrera.getFacultad().getfechaLimite();
-        if (fechaLimite.isBefore(LocalDate.now(reloj))) {
+    	
+        if (fechaLimite.isAfter(LocalDate.now(relojFijo))) {
         	return true;
         }  	
         else {
         	System.out.println("la fecha limite de las inscripciones ya ha pasado");
+        	
         	return false;
         }
     }

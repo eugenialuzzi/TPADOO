@@ -134,6 +134,7 @@ public class ProgramaPrincipal {
 		materias.add(mat4);
 		materias.add(mat5);
 		controladorCarrera.agregarMateria(materias,carrera2);
+		System.out.println(" ");
 		
 		controladorInscripcion.inscribir(estudiante, mat2,curso1);
 		/*System.out.println("el estudiante es "+estudiante.getApellido()+ " "+estudiante.getNombre());*/
@@ -159,6 +160,8 @@ public class ProgramaPrincipal {
         }  
 
 		System.out.println(" ");
+		System.out.println(carrera1.getFacultad().getfechaLimite());
+		
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
 		
