@@ -86,7 +86,7 @@ public class ControladorCurso {
     	
     		materiasDelCurso.addAll(cursoActual.getMaterias());
     		if (materiasDelCurso.size()==0)
-    			break;
+    			continue;
     		///cursoActual.getMaterias()
     		
     		/*if (materiasDelCurso.size()==0) {

@@ -9,18 +9,35 @@ import model.Materia;
  * 
  */
 public class ControladorMateria {
+	
+	private static ControladorMateria instance;
+	
+	private ControladorMateria() { 
+		
+	}
+	
+	 public static ControladorMateria getInstance() {
+
+	        if (instance == null) {
+
+	            instance = new ControladorMateria();
+
+	        }
+
+	        return instance;
+
+	    }
+
+	
+	
 	private List<Materia> materias= new ArrayList<Materia>();
 	int contador=1;
 	/**
      * Default constructor
      */
-    public ControladorMateria() {
-    }
+    
 
-    /**
-     * @param Materia materia 
-     * @return
-     */
+   
     
     public Materia crearMateria(String NombreMateria,boolean correlatividad) {
     	/* pregunta va a tener que recibir tambien la carrera ? o la carga maxima horaria? */

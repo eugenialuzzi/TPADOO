@@ -38,7 +38,7 @@ public class ControladoInscripcion {
 			);
 		
 	*/
-	ControladorCurso controladorCurso=new  ControladorCurso();
+	ControladorCurso controladorCurso = ControladorCurso.getInstance();
     /**
      * Default constructor
      */
@@ -158,6 +158,7 @@ public class ControladoInscripcion {
 			
 			int numeroActual=curso.getcantidadDeInscriptos();
 			curso.setcantidadDeInscriptos(numeroActual+1);
+			System.out.println("se inscribio al alumno "+estudiante1.getApellido()+" "+estudiante1.getNombre()+" a la materia "+materia.getNombreMateria()+" en el curso "+curso.getIdCurso());
 			
 			estudiante1.agregarMateriaQueEstaCursando(materia);
 		}

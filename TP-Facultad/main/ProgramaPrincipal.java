@@ -23,13 +23,13 @@ public class ProgramaPrincipal {
 
 	public static void main(String[] args) {
 		ControladorCarrera controladorCarrera = new ControladorCarrera();
-		ControladorMateria controladorMateria = new ControladorMateria();
+		ControladorMateria controladorMateria = ControladorMateria.getInstance();
 		ControladorDocente controladorDocente = new ControladorDocente();
 		ControladorEstudiante controladorEstudiante = new ControladorEstudiante();  /*probar despues
 		/*Carrera carrera1 = new Carrera("Ingenieria en Sistemas"); */
 		ControladoInscripcion controladorInscripcion = new ControladoInscripcion();
 		
-		ControladorCurso controladorCurso = new ControladorCurso();
+		ControladorCurso controladorCurso = ControladorCurso.getInstance();
 		
 		Carrera carrera1=controladorCarrera.crearCarrera("Ingenieria en Sistemas");
 		
@@ -160,7 +160,7 @@ public class ProgramaPrincipal {
         }  
 
 		System.out.println(" ");
-		System.out.println(carrera1.getFacultad().getfechaLimite());
+		
 		
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
