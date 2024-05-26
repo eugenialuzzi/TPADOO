@@ -11,6 +11,26 @@ import model.Materia;
  */
 public class ControladorEstudiante {
 	
+private static ControladorEstudiante instance;
+	
+	private ControladorEstudiante() { 
+		
+	}
+	
+	 public static ControladorEstudiante getInstance() {
+
+	        if (instance == null) {
+
+	            instance = new ControladorEstudiante();
+
+	        }
+
+	        return instance;
+
+	    }
+	
+	
+	
 	private List<Estudiante> estudiantes= new ArrayList<Estudiante>();
 
 
@@ -25,17 +45,9 @@ public class ControladorEstudiante {
     	return estudiante;
     }
     
-
-    public ControladorEstudiante() {
-    }
-
-    /**
-     * @param Estudiante estudiante 
-     * @return
-     */
     public List<Materia> obtenerMateriasAprobadas( Estudiante estudiante) {
-        // TODO implement here
-        return null;
+        
+        return estudiante.getMateriasAprobadas();
     }
 
     public void AgregarMateriaAprobadaALista(Estudiante estudiante, Materia materia) {

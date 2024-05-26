@@ -25,12 +25,12 @@ import model.Materia;
 public class ProgramaPrincipal {
 
 	public static void main(String[] args) {
-		ControladorCarrera controladorCarrera = new ControladorCarrera();
+		ControladorCarrera controladorCarrera = ControladorCarrera.getInstance();
 		ControladorMateria controladorMateria = ControladorMateria.getInstance();
-		ControladorDocente controladorDocente = new ControladorDocente();
-		ControladorEstudiante controladorEstudiante = new ControladorEstudiante();  /*probar despues
+		ControladorDocente controladorDocente = ControladorDocente.getInstance();
+		ControladorEstudiante controladorEstudiante =ControladorEstudiante.getInstance();  /*probar despues
 		/*Carrera carrera1 = new Carrera("Ingenieria en Sistemas"); */
-		ControladoInscripcion controladorInscripcion = new ControladoInscripcion();
+		ControladoInscripcion controladorInscripcion = ControladoInscripcion.getInstance();
 		
 		ControladorCurso controladorCurso = ControladorCurso.getInstance();
 		

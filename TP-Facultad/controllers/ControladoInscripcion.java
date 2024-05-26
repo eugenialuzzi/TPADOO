@@ -17,6 +17,26 @@ import model.Materia;
  */
 public class ControladoInscripcion {
 	
+	
+private static ControladoInscripcion instance;
+	
+	private ControladoInscripcion() { 
+		
+	}
+	
+	 public static ControladoInscripcion getInstance() {
+
+	        if (instance == null) {
+
+	            instance = new ControladoInscripcion();
+
+	        }
+
+	        return instance;
+
+	    }
+	
+	
 	///private Clock reloj=Clock.systemDefaultZone();
 	
 	///private Clock relojFijo = Clock.fixed(Instant.parse("2018-04-29T10:15:30.00Z"));
@@ -39,16 +59,8 @@ public class ControladoInscripcion {
 		
 	*/
 	ControladorCurso controladorCurso = ControladorCurso.getInstance();
-    /**
-     * Default constructor
-     */
-    public ControladoInscripcion() {
-    }
-
-    /**
-     * @param Estudiante estudiante 
-     * @return
-     */
+  
+  
     public Boolean tieneVacante(Curso curso) {
     	
     	return controladorCurso.tieneVacante(curso);

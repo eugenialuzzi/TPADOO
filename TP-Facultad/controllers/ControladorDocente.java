@@ -16,14 +16,31 @@ import model.Docente;
  */
 public class ControladorDocente implements IExportarArchivo {
 
+	
+private static ControladorDocente instance;
+	
+	private ControladorDocente () { 
+		
+	}
+	
+	 public static ControladorDocente  getInstance() {
+
+	        if (instance == null) {
+
+	            instance = new ControladorDocente ();
+
+	        }
+
+	        return instance;
+
+	    }
+	
+	
 	private List<Docente> docentes= new ArrayList<Docente>();
 	int contador=1;
 	private List<Curso> cursos= new ArrayList<Curso>();
 	
-	
-	public ControladorDocente() {
-    }
-	
+
     public Docente crearDocente(String nombre, String apellido) {
     	Docente docente= new Docente(nombre, apellido, contador);
     	docentes.add(docente);

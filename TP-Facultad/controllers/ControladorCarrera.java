@@ -10,6 +10,24 @@ import model.Materia;
  */
 public class ControladorCarrera {
 	
+private static ControladorCarrera instance;
+	
+	private ControladorCarrera () { 
+		
+	}
+	
+	 public static ControladorCarrera  getInstance() {
+
+	        if (instance == null) {
+
+	            instance = new ControladorCarrera ();
+
+	        }
+
+	        return instance;
+
+	    }
+	
 	/* este controlador no tendria que tener una lista de materias creo*/
 	private List<Materia> materias= new ArrayList<Materia>();
 	
@@ -25,8 +43,7 @@ public class ControladorCarrera {
 	
 
 	
-    public ControladorCarrera() {
-    }         
+     
    
 	public void agregarMateria(List<Materia> materia, Carrera carrera) {
 		// Recorremos la lista de materias que queremos agregar
