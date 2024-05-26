@@ -22,7 +22,7 @@ public class Curso {
 		this.materias = materias;
 	}
 
-	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula) {
+	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, String turno) {
 		super();
 		this.idCurso = idCurso;
 		
@@ -30,6 +30,7 @@ public class Curso {
 		this.aula = aula;
 		this.diaSemana = diaSemana;
 		this.materias = new ArrayList<>();
+		this.turno=turno;
 	}
 
 
@@ -119,7 +120,14 @@ public class Curso {
 			System.out.println("el curso " + curso.getIdCurso() + " ya esta lleno, no es posible la inscripcion" ) ;
 			return false; 
 		}
-	}  
+	}
 
+	@Override
+	public String toString() {
+		return "Curso [idCurso=" + idCurso + ", horario=" + horario + ", aula=" + aula + ", diaSemana=" + diaSemana
+				+ ", materias=" + materias + ", turno=" + turno + ", materia=" + materia + ", lugaresDisponibles="
+				+ lugaresDisponibles + ", cantidadDeInscriptos=" + cantidadDeInscriptos + "]";
+	}  
+ 
 
 }

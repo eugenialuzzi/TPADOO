@@ -106,6 +106,14 @@ public class Materia {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "Materia [codigoMateria=" + codigoMateria + ", nombreMateria=" + nombreMateria + ", esCorrelativa="
+				+ esCorrelativa + ", cargaHorariaMat=" + cargaHorariaMat + ", materiaCorrelativaAnterior="
+				+ materiaCorrelativaAnterior + ", materiaCorrelativaSiguiente=" + materiaCorrelativaSiguiente
+				+ ", cursosDeLaMateria=" + cursosDeLaMateria + "]";
+	}
+
 	
     
     

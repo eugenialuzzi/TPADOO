@@ -1,5 +1,6 @@
 package main;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -93,8 +94,8 @@ public class ProgramaPrincipal {
 		
 		List<Curso> cursos = new ArrayList<>();
 		
-		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1);
-		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1);
+		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1,"noche");
+		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1,"tarde");
 		
 		
 	
@@ -144,11 +145,17 @@ public class ProgramaPrincipal {
 		
 		/* hacer paquetes de materias de primer año */
 		
+		
+		
 		List<Curso> cursosAsignados = controladorDocente.cursosAsignados(2);
+		List<Curso> listaBackUp=new ArrayList();
+		
+				
 		System.out.println(" ");
         // Mostrar los cursos asignados
         System.out.println("Cursos asignados al docente con ID " + 2 + ":");
         for (Curso curso : cursosAsignados) {
+        	listaBackUp.add(curso);
             System.out.println("- Curso ID: " + curso.getIdCurso());
         }
         
@@ -161,15 +168,44 @@ public class ProgramaPrincipal {
             System.out.println(cursoInfo);
         }  
 
-		System.out.println(" ");
-
+        
+       
 		// Informes
 
+		
 		FactoryInforme factoryInforme = new FactoryInforme();
-		Informe informe = factoryInforme.crearInforme(docente, cursosAsignados, 0);
-		System.out.println(informe);
+		 
 		
 		
+
+
+	
+		 
+
+
+		      
+		 
+
+		
+		
+		
+		System.out.println(" back up");
+		Informe informe = factoryInforme.crearInforme(docente, listaBackUp, 0);
+		System.out.println(" resumen");
+		factoryInforme.mostrarInformeResumido(informe);
+		System.out.println(" et");
+		/*
+		System.out.println("segun el informe "+informe.getIdInforme());
+		System.out.println(" el docente "+docente.getApellido()+" tiene ");
+		
+		for (Curso cursoActual: informe.getCursos()) {
+			System.out.println(cursoActual.getIdCurso() +"     "+ cursoActual.getTurno());
+		}
+			
+		*/
+		/*System.out.println(informe);*/
+		
+	
 		
 		System.out.println(" fin");
 		// TODO Auto-generated method stub

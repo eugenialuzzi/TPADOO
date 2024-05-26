@@ -44,18 +44,38 @@ public class Informe {
     public String getTipoInforme(){
         return tipoInforme;
     } 
-
+   
     public String toString(){
+    	
         StringBuilder sb = new StringBuilder();
         sb.append("Informe(docente)").append(docente).append(" , listaCursos");
         for (Curso a : cursos) {
             sb.append(a).append("/n");
+            System.out.println();
         }
         sb.append('}');
         return sb.toString();
+        
+    	
+    	
     }
 
 
+	public Docente getDocente() {
+		return docente;
+	}
+
+
+	public void setDocente(Docente docente) {
+		this.docente = docente;
+	}
+
+
+	public void setIdInforme(int idInforme) {
+		this.idInforme = idInforme;
+	}   
+
+ 
     
 
 

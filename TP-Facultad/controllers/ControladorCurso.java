@@ -30,8 +30,8 @@ public class ControladorCurso {
 	
 	
    
-    public Curso crearCurso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula) {
-    	Curso curso = new Curso(idCurso, diaSemana, horario, aula);
+    public Curso crearCurso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula,String turno) {
+    	Curso curso = new Curso(idCurso, diaSemana, horario, aula,turno);
     	cursos.add(curso);
     	return curso;
     	
