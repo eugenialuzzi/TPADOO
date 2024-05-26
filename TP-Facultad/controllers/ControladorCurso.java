@@ -8,6 +8,7 @@ import model.Carrera;
 import model.Curso;
 import model.DiaSemana;
 import model.Materia;
+import model.Turno;
 
 
 public class ControladorCurso {
@@ -30,7 +31,7 @@ public class ControladorCurso {
 	
 	
    
-    public Curso crearCurso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula,String turno) {
+    public Curso crearCurso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, Turno turno) {
     	Curso curso = new Curso(idCurso, diaSemana, horario, aula,turno);
     	cursos.add(curso);
     	return curso;

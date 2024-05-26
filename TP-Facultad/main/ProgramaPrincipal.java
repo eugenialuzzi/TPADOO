@@ -20,6 +20,7 @@ import model.Estudiante;
 import model.Facultad;
 import model.Informe;
 import model.Materia;
+import model.Turno;
 import model.FactoryMethod.FactoryInforme;
 
 public class ProgramaPrincipal {
@@ -93,9 +94,12 @@ public class ProgramaPrincipal {
 		Aula aula2 = new Aula (756, 50);
 		
 		List<Curso> cursos = new ArrayList<>();
+
+		Turno turnoMañana = new Turno("Mañana", LocalTime.of(7, 30,00) );
+		Turno turnoTarde = new Turno("Tarde", LocalTime.of(14, 30,00));
 		
-		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1,"noche");
-		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1,"tarde");
+		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turnoMañana);
+		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1, turnoTarde);
 		
 		
 	
@@ -177,18 +181,6 @@ public class ProgramaPrincipal {
 		 
 		
 		
-
-
-	
-		 
-
-
-		      
-		 
-
-		
-		
-		
 		System.out.println(" back up");
 		Informe informe = factoryInforme.crearInforme(docente, listaBackUp, 0);
 		System.out.println(" resumen");
@@ -204,6 +196,8 @@ public class ProgramaPrincipal {
 			
 		*/
 		/*System.out.println(informe);*/
+
+		factoryInforme.exportar(informe);
 		
 	
 		

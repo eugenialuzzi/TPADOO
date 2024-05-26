@@ -10,7 +10,7 @@ public class Curso {
     private Aula aula;
     private DiaSemana diaSemana;
     private List<Materia> materias;
-    private String turno;
+    private Turno turno;
     private Materia materia;
     
     private int lugaresDisponibles;
@@ -22,7 +22,7 @@ public class Curso {
 		this.materias = materias;
 	}
 
-	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, String turno) {
+	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, Turno turno) {
 		super();
 		this.idCurso = idCurso;
 		
@@ -82,11 +82,11 @@ public class Curso {
 		
 	}
 	 
-	 public String getTurno() {
+	 public Turno getTurno() {
 		return turno;
 	}
 
-	public void setTurno(String turno) {
+	public void setTurno(Turno turno) {
 		this.turno = turno;
 	} 
 	
