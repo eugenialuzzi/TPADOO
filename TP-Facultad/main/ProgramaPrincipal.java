@@ -16,7 +16,9 @@ import model.Curso;
 import model.DiaSemana;
 import model.Docente;
 import model.Estudiante;
+import model.FactoryInforme;
 import model.Facultad;
+import model.Informe;
 import model.Materia;
 
 public class ProgramaPrincipal {
@@ -160,12 +162,21 @@ public class ProgramaPrincipal {
         }  
 
 		System.out.println(" ");
+
+		// Informes
+
+		FactoryInforme factoryInforme = new FactoryInforme();
+		Informe informe = factoryInforme.crearInforme(docente, cursosAsignados, 0);
+		System.out.println(informe);
+		
 		
 		
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
 		
 	}
+
+
     
 
 	}

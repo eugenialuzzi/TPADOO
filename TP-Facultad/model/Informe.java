@@ -9,11 +9,17 @@ import model.Docente;
 
 public class Informe {
 
-    public Informe(){
+    private List<Curso> cursos;
+    private int idInforme;
+    private String tipoInforme;
+    private Docente docente;
 
+    public Informe(Docente docente, List<Curso> cursos, int IdInforme){
+        this.docente = docente;
+        this.cursos = cursos;
+        this.idInforme = IdInforme;
     }
 
-    private List<Curso> cursos;
 
     public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
@@ -23,14 +29,34 @@ public class Informe {
 		return cursos;
 	}
 
-
-    public void crearInforme(Docente docente, Curso curso){
-        String nombre = docente.getNombre();
-        LocalTime horario = curso.getHorario();
-        Aula aulaAsignada = curso.getAula();
-        int cantidadInscriptos = curso.getcantidadDeInscriptos();
-        System.out.println("Se creó el informe: " + "Docente asignado: " +  nombre + " Horario asignado: " + horario + " Aula asignada: " + aulaAsignada + " Cantidad de Inscriptos: " + cantidadInscriptos );
+    public void setIdInforme() {
+        this.idInforme = idInforme;
     }
+
+    public int getIdInforme(){
+        return idInforme;
+    } 
+
+    public void setTipoInforme() {
+        this.tipoInforme = tipoInforme;
+    }
+
+    public String getTipoInforme(){
+        return tipoInforme;
+    } 
+
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Informe(docente)").append(docente).append(" , listaCursos");
+        for (Curso a : cursos) {
+            sb.append(a).append("/n");
+        }
+        sb.append('}');
+        return sb.toString();
+    }
+
+
+    
 
 
 
