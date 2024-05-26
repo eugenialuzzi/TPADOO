@@ -75,7 +75,10 @@ public class Docente {
     	System.out.println("se agrego el curso " + curso.getIdCurso()  +" en el horario:  " + curso.getHorario() + " al docente: " + nombre);
     }
 	
-	
+	public void quitarCursoADocente(Curso curso){
+    	cursos.remove(curso);
+    	System.out.println("se saco el curso " + curso.getIdCurso()  +" en el horario:  " + curso.getHorario() + " al docente: " + nombre);
+    }
 
 	@Override
 	public String toString() {
