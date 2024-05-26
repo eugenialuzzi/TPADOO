@@ -36,28 +36,8 @@ private static ControladoInscripcion instance;
 
 	    }
 	
-	
-	///private Clock reloj=Clock.systemDefaultZone();
-	
-	///private Clock relojFijo = Clock.fixed(Instant.parse("2018-04-29T10:15:30.00Z"));
-	
 	private Clock relojFijo = Clock.fixed(Instant.parse("2025-04-29T10:15:30.00Z"),ZoneId.of("Asia/Calcutta"));
-	
-	/// este reloj hay que meterlo en otro lado tal vez ??
-	
-	/*
-	private static ZonedDateTime NOW = ZonedDateTime.of (
-			year:2022,
-			month:6,
-			dayOfMonth:15,
-			hour:12,
-			minute:0,
-			second:0,
-			nanoOfSecond:0,
-			ZoneId.of(zoneId:"GMT")
-			);
-		
-	*/
+
 	ControladorCurso controladorCurso = ControladorCurso.getInstance();
   
   
@@ -66,20 +46,11 @@ private static ControladoInscripcion instance;
     	return controladorCurso.tieneVacante(curso);
     }
 
-    /**
-     * @param Materia materia 
-     * @return
-     */
     public void mostrarCursosDisponibles( Materia materia) {
     	materia.getCursosDisponibles();
        
     }
 
-    /**
-     * @param Carrera carrera 
-     * @return
-     */
-    
     private boolean validarFechaLimite(Estudiante estudiante) {
     	
     	Carrera carrera=estudiante.getCarrera();
@@ -95,23 +66,13 @@ private static ControladoInscripcion instance;
         }
     }
 
-    /**
-     * @param Estudiante estudiante 
-     * @return
-     */
+
     public Integer validarCantCursosInscriptos( Estudiante estudiante) {
         // TODO implement here
         return null;
     }
 
-    /**
-     * @param Estudiante estudiante 
-     * @param Mareria materia 
-     * @return
-     */
     public Boolean validarCorrelativas( Estudiante estudiante,  Materia materia) {
-        // TODO implement here
-    	/* hay que armar lo de las correlativodades en la clase materia y en estudiante una lista de las ya cursadas */
     	Carrera laCarrera=estudiante.getCarrera();
     	Materia correlativa=laCarrera.Correlatividad(materia);
         if (estudiante.yaAproboLaMateria(correlativa)) {
@@ -122,17 +83,10 @@ private static ControladoInscripcion instance;
         }
     }
 
-    /**
-     * 
-     */
     public void calcularMonto(Map<Materia,Integer> materia) {
         // TODO implement here
     }
 
-    /**
-     * @param Estudiante estudiante 
-     * @return
-     */
     private boolean chequearCargaHoraria(Estudiante estudiante, Materia materia) {
         Carrera carrera=estudiante.getCarrera();
     	int cargaHorariamaxima=carrera.getCargaHorariaMax();
@@ -165,7 +119,6 @@ private static ControladoInscripcion instance;
 			bandera=false;
 		}
 		
-		/* aca se agrega al alumno al curso y la materia el alumno */
 		if (bandera==true) {
 			
 			int numeroActual=curso.getcantidadDeInscriptos();

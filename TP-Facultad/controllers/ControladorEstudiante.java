@@ -6,9 +6,6 @@ import model.Carrera;
 import model.Estudiante;
 import model.Materia;
 
-/**
- * 
- */
 public class ControladorEstudiante {
 	
 private static ControladorEstudiante instance;
@@ -33,11 +30,9 @@ private static ControladorEstudiante instance;
 	
 	private List<Estudiante> estudiantes= new ArrayList<Estudiante>();
 
-
-
-
-	int contador=1;
+	
     public Estudiante crearEstudiante(String nombre, String apellido, boolean regular, Carrera carrera) {
+    	int contador=1;
     	Estudiante estudiante= new Estudiante(nombre, apellido, contador, regular, carrera);
     	
     	estudiantes.add(estudiante);

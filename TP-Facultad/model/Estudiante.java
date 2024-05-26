@@ -2,39 +2,18 @@ package model;
 
 import java.util.*;
 
-/**
- * 
- */
 public class Estudiante {
-    /**
-     * 
-     */
+
     private String nombre;
-
-    /**
-     * 
-     */
     private String apellido;
-
-    /**
-     * 
-     */
     private int idEstudiante;
-
-    /**
-     * 
-     */
     private Boolean estadoEstudiante;
-
     private int cargaHorariaActual=0;
-    
     private Carrera carrera;
-     
     private List<Materia> materiasActuales=new ArrayList<Materia>();
     private List<Materia> materiasAprobadas=new ArrayList<Materia>();
 
 	public Estudiante(String nombre, String apellido, int idEstudiante, Boolean estadoEstudiante, Carrera carrera) {
-		/*super(); */
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.idEstudiante = idEstudiante;
@@ -69,18 +48,6 @@ public class Estudiante {
 		
 	}
 	    
-	/*
-    public boolean ValidarCorrelactividad(Carrera carrera,  Materia materia) {
-    	 Materia materiaCorrelativa = carrera.Correlatividad(materia);
-        return false;
-    }
-*/
-	@Override
-	public String toString() {
-		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", idEstudiante=" + idEstudiante
-				+ ", estadoEstudiante=" + estadoEstudiante + ", carrera=" + carrera + "]";
-	}
-
 	public List<Materia> getMateriasActuales() {
 		return materiasActuales;
 	}
@@ -107,8 +74,6 @@ public class Estudiante {
 	}
 	
     public void agregarMateriaAprobadaALista (Materia materia) {
-    	/* tambien la saca de la lista de cursando actualmente  */
-    	
     	materiasActuales.remove(materia);
     	materiasAprobadas.add(materia);
     	
@@ -139,8 +104,13 @@ public class Estudiante {
     	
     }
     
- 
-    
+
+	@Override
+	public String toString() {
+		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", idEstudiante=" + idEstudiante
+				+ ", estadoEstudiante=" + estadoEstudiante + ", carrera=" + carrera + "]";
+	}
+
     
     
     
