@@ -90,16 +90,18 @@ private static ControladorDocente instance;
 		
 	}
 
-	private Docente buscarDocentePorSuId(int idDocente) {
+	public Docente buscarDocentePorSuId(int idDocente) {
 		
 		for(Docente docente:docentes) {
 			int idActual=docente.getIdDocente();
 			if (idActual==idDocente) {
 				return docente;
 			}else {
-				System.out.println("no se encontro un docente con esa id");
+				continue;
+				
 			}	
 		}
+		System.out.println("no se encontro un docente con esa id");
 		return null;
 	}
 }

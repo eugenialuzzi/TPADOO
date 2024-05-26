@@ -190,7 +190,7 @@ public class ProgramaPrincipal {
 		
 		
 		System.out.println(" back up");
-		Informe informe = factoryInforme.crearInforme(docente, listaBackUp, 0);
+		Informe informe = factoryInforme.crearInforme(docente.getIdDocente(), listaBackUp, 0);
 		System.out.println(" resumen");
 		factoryInforme.mostrarInformeResumido(informe);
 		System.out.println(" et");

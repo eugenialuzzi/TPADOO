@@ -12,10 +12,10 @@ public class Informe {
     private List<Curso> cursos;
     private int idInforme;
     private String tipoInforme;
-    private Docente docente;
+    private int idDocente;
 
-    public Informe(Docente docente, List<Curso> cursos, int IdInforme){
-        this.docente = docente;
+    public Informe(int idDocente, List<Curso> cursos, int IdInforme){
+        this.idDocente = idDocente;
         this.cursos = cursos;
         this.idInforme = IdInforme;
     }
@@ -48,7 +48,7 @@ public class Informe {
     public String toString(){
     	
         StringBuilder sb = new StringBuilder();
-        sb.append("Informe(docente)").append(docente).append(" , listaCursos");
+        sb.append("Informe(docente)").append(idDocente).append(" , listaCursos");
         for (Curso a : cursos) {
             sb.append(a).append("/n");
             System.out.println();
@@ -61,13 +61,13 @@ public class Informe {
     }
 
 
-	public Docente getDocente() {
-		return docente;
+	public int getIdDocente() {
+		return idDocente;
 	}
 
 
-	public void setDocente(Docente docente) {
-		this.docente = docente;
+	public void setDocente(int idDocente) {
+		this.idDocente= idDocente;
 	}
 
 
