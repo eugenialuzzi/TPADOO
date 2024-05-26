@@ -17,10 +17,10 @@ import model.Curso;
 import model.DiaSemana;
 import model.Docente;
 import model.Estudiante;
-import model.FactoryInforme;
 import model.Facultad;
 import model.Informe;
 import model.Materia;
+import model.FactoryMethod.FactoryInforme;
 
 public class ProgramaPrincipal {
 

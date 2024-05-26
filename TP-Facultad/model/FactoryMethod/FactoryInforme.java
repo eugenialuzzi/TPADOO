@@ -1,4 +1,4 @@
-package model;
+package model.FactoryMethod;
 
 import java.time.LocalTime;
 import java.util.List;

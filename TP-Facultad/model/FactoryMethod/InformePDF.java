@@ -1,4 +1,6 @@
-package model;
+package model.FactoryMethod;
+
+import model.Informe;
 
 public class InformePDF extends FactoryInforme{
 
