@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import interfaces.IExportarArchivo;
+
 import model.Carrera;
 import model.Curso;
 import model.Estudiante;
@@ -14,7 +14,7 @@ import model.Docente;
 /**
  * 
  */
-public class ControladorDocente implements IExportarArchivo {
+public class ControladorDocente {
 
 	
 private static ControladorDocente instance;
@@ -84,11 +84,7 @@ private static ControladorDocente instance;
     }
    
 
-	@Override
-	public void exportar(List<Curso> cursos) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	public Docente buscarDocentePorSuId(int idDocente) {
 		
