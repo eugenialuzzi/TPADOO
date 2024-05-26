@@ -60,7 +60,7 @@ private static ControladorDocente instance;
         for (Docente docente : docentes) {
             if (docente.getIdDocente() == idDocente) {
                 cursosAsignados = docente.getCursos();
-                break; // Terminamos el bucle porque ya encontramos al docente
+                break;
             }
         }
         return cursosAsignados;
@@ -77,7 +77,7 @@ private static ControladorDocente instance;
                         cronogramaSemanal.add(cursoInfo);
                     }
                 }
-                break; // Terminamos el bucle porque ya encontramos al docente
+                break; 
             }
         }
         return cronogramaSemanal;

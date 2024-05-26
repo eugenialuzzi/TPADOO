@@ -88,12 +88,6 @@ public class ControladorCurso {
     		materiasDelCurso.addAll(cursoActual.getMaterias());
     		if (materiasDelCurso.size()==0)
     			continue;
-    		///cursoActual.getMaterias()
-    		
-    		/*if (materiasDelCurso.size()==0) {
-    			System.out.println("no existen cursos para esa materia");
-    			return null;
-    		} */
     		for (Materia materiaActual:materiasDelCurso) {
     			if(materiaActual==materia) {
     				listaResultado.add(cursoActual);

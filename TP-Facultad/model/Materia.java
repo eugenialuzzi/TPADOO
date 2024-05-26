@@ -42,7 +42,6 @@ public class Materia {
 	}
 
 	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa) {
-		/*super(); */
 		this.codigoMateria = codigoMateria;
 		this.nombreMateria = nombreMateria;
 		this.esCorrelativa = esCorrelativa;
@@ -50,14 +49,12 @@ public class Materia {
 	}
 	
 	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa,Materia correlativaanterior) {
-		/*super(); */
 		this.codigoMateria = codigoMateria;
 		this.nombreMateria = nombreMateria;
 		this.esCorrelativa = esCorrelativa;
 		this.cargaHorariaMat = 4;
 		this.materiaCorrelativaAnterior=correlativaanterior;
 	}
-
 	
 
 	public int getCargaHorariaMat() {
@@ -80,21 +77,7 @@ public class Materia {
 	public void setMateriaCorrelativaSiguiente(Materia materiaCorrelativaSiguiente) {
 		this.materiaCorrelativaSiguiente = materiaCorrelativaSiguiente;
 	}
-	  
-	/*
-	 revisar si es necesario
-	public void getTodosLosCursosDeLaMateria() {
-		for (Curso c:cursosDeLaMateria) {
-			System.out.print("el id es: "+ +"se dicta el dia");
-			c.getIdCurso();
-			c.getDiaSemana();
-			c.getHorario();
-			c.getAula();
-			c.getcantidadDeInscriptos();
-			
-		}
-		
-	*/
+
 	
 	public void getCursosDisponibles() {
 		for (Curso c:cursosDeLaMateria) {
