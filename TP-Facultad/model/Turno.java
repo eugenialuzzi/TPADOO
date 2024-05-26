@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Turno {
@@ -8,6 +9,7 @@ public class Turno {
     private String nombre;
     private LocalTime rangoHorario;
     private List<Curso> cursos;
+    private List<Turno> turnos = new ArrayList();
 
     public Turno(String nombre, LocalTime rangoHorario){
         this.nombre = nombre;
@@ -36,10 +38,6 @@ public class Turno {
         return rangoHorario;
     }
 
-    public void asignarTurno(Curso curso){
-      
-    	cursos.add(curso);
-    	System.out.println("se agrego el curso " + curso.getIdCurso()  +" en el turno:  " + curso.getTurno());
-    }
+    
     
 }

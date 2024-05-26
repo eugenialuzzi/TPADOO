@@ -58,6 +58,12 @@ public class ProgramaPrincipal {
 	    Facultad facultad=new Facultad();
 	    facultad.setNombreDeFacultad("Facultad de Ingenieria");
 	    carrera1.setFacultad(facultad);
+		facultad.setfechaLimite("2028-03-05");
+
+		Facultad facultad2=new Facultad();
+	    facultad2.setNombreDeFacultad("Facultad de Abogacia");
+	    carrera2.setFacultad(facultad2);
+		facultad2.setfechaLimite("2028-08-10");
 	    
 	    controladorCarrera.agregarMateria(materias,carrera1);
 		

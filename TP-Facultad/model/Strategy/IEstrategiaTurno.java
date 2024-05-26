@@ -7,11 +7,7 @@ import model.Turno;
 
 public interface IEstrategiaTurno {
 
-    public static void almacenarTurnoEnCurso(List<Curso> cursos, Turno turno){
-
-        for(Curso c : cursos){
-            turno.asignarTurno(c);
-        }
+    public static void almacenarTurnoEnCurso(List<Curso> cursos){
 
     }
 

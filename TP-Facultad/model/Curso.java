@@ -107,7 +107,6 @@ public class Curso {
     	System.out.println("se agrego la materia " + materia.getNombreMateria() + " al curso ID: " + idCurso + ". aula numero: " + aula.getNumeroAula() +", en el horario: " + horario);
     }
 	
-
 	
 
 	public Boolean tieneVacante(Curso curso) {

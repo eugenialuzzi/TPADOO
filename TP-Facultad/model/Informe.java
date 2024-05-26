@@ -48,7 +48,7 @@ public class Informe {
     public String toString(){
     	
         StringBuilder sb = new StringBuilder();
-        sb.append("Informe(docente)").append(idDocente).append(" , listaCursos");
+        sb.append("Informe(idDocente)").append(idDocente).append(" , listaCursos");
         for (Curso a : cursos) {
             sb.append(a).append("/n");
             System.out.println();
