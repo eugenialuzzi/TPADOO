@@ -91,6 +91,7 @@ private static ControladoInscripcion instance;
 		materias = estudiante.getMateriasActuales();
 		for(Materia materia:materias){
 			if(materias.size() == 0){
+				System.out.println("el alumno no esta cursando materias actualmente ");
 				break;
 			}
 			precio = precio + materia.getCosto();

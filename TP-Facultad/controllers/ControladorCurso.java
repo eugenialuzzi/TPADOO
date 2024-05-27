@@ -1,6 +1,9 @@
 package controllers;
 
 import java.util.*;
+
+import interfaces.TurnoInterface;
+
 import java.time.LocalTime;
 
 import model.Aula;
@@ -37,6 +40,13 @@ public class ControladorCurso {
     	return curso;
     	
     }
+    
+    /*esto es lo nuevo*/
+    public void asignarUnTurnoEspecialACurso(int idCurso , TurnoInterface turnoInterface) {
+    	
+    	buscarCursoPorSuId(idCurso).setTurnoInterface(turnoInterface);
+    }
+    
     
 
     public Boolean tieneVacante(Curso curso) {
