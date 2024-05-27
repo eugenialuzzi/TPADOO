@@ -18,9 +18,9 @@ public void exportar(Informe informe){
 
 }
 
-public Informe crearInforme(int intDocente, List<Curso> cursos, int idInforme){
+public Informe crearInforme(int idDocente, List<Curso> cursos, int idInforme){
         
-        return new Informe(intDocente, cursos, idInforme);
+        return new Informe(idDocente, cursos, idInforme);
     
     }
 

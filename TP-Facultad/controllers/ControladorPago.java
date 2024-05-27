@@ -13,20 +13,18 @@ import interfaces.PagoMisCuentas;
 public class ControladorPago {
 
 	private static ControladorPago instance;
+    
     public ControladorPago() {
     }
 
     public static ControladorPago getInstance() {
-
         if (instance == null) {
-
             instance = new ControladorPago();
-
         }
-
         return instance;
-
     }
+
+
     public void pagar(Double precio){
         System.out.println("El monto a pagar es de: " + precio);
     }
