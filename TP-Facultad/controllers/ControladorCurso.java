@@ -97,5 +97,7 @@ public class ControladorCurso {
     	return listaResultado;
     }
     
-    
+    /*public void agregarTunoACurso(Curso curso,Turno turno) {
+    	
+    } */
 }

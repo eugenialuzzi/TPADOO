@@ -125,7 +125,7 @@ public class ProgramaPrincipal {
 		System.out.println("el aula del curso1 es "+curso1.getAula() + " y su capacidad es "+curso1.getAula().getCapacidadMax());
 		;
 		System.out.println("");
-		System.out.println("tiene vacante?"+controladorCurso.tieneVacante(curso1));
+		
 		
 		
 		System.out.println("su capacidad es "+controladorCurso.verCapacidadAula(curso1));
