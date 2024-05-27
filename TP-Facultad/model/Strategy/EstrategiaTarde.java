@@ -1,5 +1,5 @@
 package model.Strategy;
 
-public class EstrategiaTarde {
+public class EstrategiaTarde implements IEstrategiaTurno {
     
 }
