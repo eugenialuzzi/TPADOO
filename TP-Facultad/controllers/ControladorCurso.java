@@ -58,14 +58,7 @@ public class ControladorCurso {
 		return capacidad;
 	}
 	
-    public void recorrerCurso(Curso curso) {
-
-	}
-    public void recorrerCurso(List<Curso> cursos) {
-
-        // TODO implement here
-        
-    }
+ 
     private Curso buscarCursoPorSuId(int idCursoBuscado) {
     	for (Curso curso:cursos) {
     		int idActual=curso.getIdCurso();
