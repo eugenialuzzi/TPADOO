@@ -2,8 +2,10 @@ package model;
 
 import java.util.*;
 import java.time.LocalTime;
+import interfaces.TurnoInterface;
+import interfaces.TurnoInterface;
 
-public class Curso {
+public class Curso{
 
     private int idCurso;
     private LocalTime horario;
@@ -13,10 +15,20 @@ public class Curso {
     private Turno turno;
     private Materia materia;
     
+    ///aca cambio
+    private TurnoInterface turnoInterface;
+    
+    
     private int lugaresDisponibles;
     private int cantidadDeInscriptos;
 
-
+    public void setTurnoInterface(TurnoInterface turnoInterface) {
+		this.turnoInterface = turnoInterface;
+	}
+    
+    ///fin del cambio
+    
+    
     
 	public void setMaterias(List<Materia> materias) {
 		this.materias = materias;

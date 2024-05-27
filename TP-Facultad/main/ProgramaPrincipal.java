@@ -23,6 +23,8 @@ import model.Informe;
 import model.Materia;
 import model.Turno;
 import model.FactoryMethod.FactoryInforme;
+import model.TurnoMañana;
+import interfaces.TurnoInterface;
 
 public class ProgramaPrincipal {
 
@@ -212,6 +214,10 @@ public class ProgramaPrincipal {
 
 		controladorMateria.getCantidadInscriptosPorCurso();
 		
+		
+		System.out.println("aca le asigno un turno noche a un curso");
+		TurnoInterface turno=new TurnoMañana();
+		curso1.setTurnoInterface(turno);
 		
 		
 		System.out.println(" fin");
