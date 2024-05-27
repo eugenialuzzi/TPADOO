@@ -12,6 +12,17 @@ public class Materia {
     private Materia materiaCorrelativaAnterior;
     private Materia materiaCorrelativaSiguiente;
     private List<Curso> cursosDeLaMateria;
+	private Double costo;
+
+	
+
+	public void setCosto(Double costo){
+		this.costo = costo;
+	}
+
+	public Double getCosto(){
+		return costo;
+	}
     
 	public int getCodigoMateria() {
 		return codigoMateria;
@@ -78,16 +89,19 @@ public class Materia {
 		this.materiaCorrelativaSiguiente = materiaCorrelativaSiguiente;
 	}
 
-	
-	public void getCursosDisponibles() {
+	public List<Curso> getCursosDisponibles(){
+		List<Curso> cursosDisponibles = new ArrayList<>();
 		for (Curso c:cursosDeLaMateria) {
 			if (c.tieneVacante(c)) {
+				cursosDisponibles.add(c);
 				System.out.println("el curso" + c.getIdCurso() +
 						"de los dias" + c.getHorario() + " " + 
 						c.getDiaSemana() + "tiene vacantes");
 			}
 		}
+		return cursosDisponibles;
 	}
+
 
 	@Override
 	public String toString() {

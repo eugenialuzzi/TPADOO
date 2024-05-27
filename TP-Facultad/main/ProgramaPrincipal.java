@@ -81,7 +81,7 @@ public class ProgramaPrincipal {
 		
 		estudiante=controladorEstudiante.crearEstudiante("Jose", "Sparks", true, carrera1);
 		/*Estudiante estudiante4 = new Estudiante("Jose", "Sparks", 9987, true, carrera1);*/
-	
+
 		/*
 		estudiante1.setCarrera(carrera1);
 		estudiante2.setCarrera(carrera2);
@@ -138,6 +138,7 @@ public class ProgramaPrincipal {
 		Materia mat2=controladorMateria.crearMateria("fisica 2",true,mat1);//fisica 2 para ing en sistemas
 		materias.add(mat2);
 		controladorCarrera.agregarMateria(materias,carrera1);
+	
 		
 		materias.clear();
 		Materia mat3=controladorMateria.crearMateria("filosofia",false,null);
@@ -154,8 +155,8 @@ public class ProgramaPrincipal {
 		controladorInscripcion.inscribir(estudiante, mat1,curso2);
 		
 		/* hacer paquetes de materias de primer año */
-		
-		
+		mat1.setCosto(50000.0);
+		controladorInscripcion.calcularMonto(estudiante);
 		
 		List<Curso> cursosAsignados = controladorDocente.cursosAsignados(2);
 		List<Curso> listaBackUp=new ArrayList();
@@ -204,8 +205,10 @@ public class ProgramaPrincipal {
 		/*System.out.println(informe);*/
 
 		factoryInforme.exportar(informe);
+
+		controladorMateria.getCantidadInscriptosPorCurso();
 		
-	
+		
 		
 		System.out.println(" fin");
 		// TODO Auto-generated method stub

@@ -48,12 +48,41 @@ public class ControladorMateria {
     	return materia;
     }
     
-    ///ControladorCurso controladorCurso = new ControladorCurso();
+
     ControladorCurso controladorCurso = ControladorCurso.getInstance();
-    public List<Curso> obtenerCursos( Materia materia) {
+    
+	public List<Curso> obtenerCursos( Materia materia) {
     	List<Curso> CursosDeUnaMateria=new ArrayList<Curso>();
     	controladorCurso.buscarCursosDeUnaMateria(materia);
         return CursosDeUnaMateria;
     }
+
+
+
+	public void getCantidadInscriptosPorCurso(){
+
+		for(Materia materia:materias){
+			List<Curso> cursos = new ArrayList<Curso>();
+			
+			cursos = controladorCurso.buscarCursosDeUnaMateria(materia);
+			if(cursos.size() == 0){
+				continue;
+			}
+			System.out.println("Para la materia: " + materia.getNombreMateria());
+			for(Curso curso:cursos){
+				curso.getcantidadDeInscriptos();
+				System.out.println("La cantidad de inscriptos del curso: " + curso.getIdCurso() + " es: " + curso.getcantidadDeInscriptos());
+			}
+		}
+	}
+
+	public void getCursosDisponibles(Materia materia) {
+
+		if(materia.getCursosDisponibles() == null){
+			System.out.println("No hay cursos disponibles");
+		}
+
+	}
    
+
 }

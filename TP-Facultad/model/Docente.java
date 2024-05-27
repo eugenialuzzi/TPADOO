@@ -12,6 +12,7 @@ public class Docente {
     private String apellido;
     private int idDocente;
     private List<Curso> cursos;
+	private int horasMensualesAsignadas;
 
     public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
@@ -24,6 +25,24 @@ public class Docente {
 		this.idDocente = idDocente;
 		this.cursos = new ArrayList<>();
         System.out.println("se creo el docente: " + nombre + " " + apellido + ", id = " + idDocente);
+	}
+
+	
+	public void setHorasMensualesAsignadas(String nombre) {
+		this.horasMensualesAsignadas = horasMensualesAsignadas;
+	}
+
+	public int getHorasMensualesAsignadas() {
+		calcularHorasAsignadas();
+		return horasMensualesAsignadas;
+	}
+
+	public void calcularHorasAsignadas(){
+		int horas = 0;
+		for(Curso curso:cursos){
+			horas = horas +curso.getMateria().getCargaHorariaMat();
+		}
+		horasMensualesAsignadas = horas;
 	}
 
     

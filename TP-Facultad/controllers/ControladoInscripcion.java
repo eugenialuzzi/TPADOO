@@ -68,7 +68,7 @@ private static ControladoInscripcion instance;
 
 
     public Integer validarCantCursosInscriptos( Estudiante estudiante) {
-        // TODO implement here
+        
         return null;
     }
 
@@ -83,8 +83,22 @@ private static ControladoInscripcion instance;
         }
     }
 
-    public void calcularMonto(Map<Materia,Integer> materia) {
-        // TODO implement here
+	ControladorPago controladorPago = new ControladorPago();
+
+    public void calcularMonto(Estudiante estudiante) {
+		Double precio = 0.0;
+		List<Materia> materias = new ArrayList<Materia>();
+		materias = estudiante.getMateriasActuales();
+		for(Materia materia:materias){
+			if(materias.size() == 0){
+				break;
+			}
+			precio = precio + materia.getCosto();
+		}
+		System.out.println("El total que deberá abonar alumno será de: " + precio);
+		controladorPago.pagar(precio);
+
+
     }
 
     private boolean chequearCargaHoraria(Estudiante estudiante, Materia materia) {

@@ -101,13 +101,27 @@ public class Curso {
 	public List<Materia> getMaterias() {
         return materias;
     }
+
+	public void setMateria(Materia materia){
+		this.materia = materia;
+	}
+
+	public Materia getMateria(){
+		return materia;
+	}
 	
 	public void agregarMateriaACurso(Materia materia){
     	materias.add(materia);
     	System.out.println("se agrego la materia " + materia.getNombreMateria() + " al curso ID: " + idCurso + ". aula numero: " + aula.getNumeroAula() +", en el horario: " + horario);
     }
 	
-	
+	public boolean validarMaxInscriptos(){
+		if(lugaresDisponibles == 0){
+			return false;
+		} else{
+			return true;
+		}
+	}
 
 	public Boolean tieneVacante(Curso curso) {
 	/*int capacidadAula=curso.getAula().getCapacidadMax();
