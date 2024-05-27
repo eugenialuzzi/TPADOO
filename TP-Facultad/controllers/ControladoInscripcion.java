@@ -189,5 +189,6 @@ private static ControladoInscripcion instance;
 		}
 		
 	}
+	
 
 }

@@ -11,6 +11,7 @@ import controllers.ControladorCurso;
 import controllers.ControladorDocente;
 import controllers.ControladorEstudiante;
 import controllers.ControladorMateria;
+import controllers.ControladorPago;
 import model.Aula;
 import model.Carrera;
 import model.Curso;
@@ -32,6 +33,7 @@ public class ProgramaPrincipal {
 		ControladorEstudiante controladorEstudiante =ControladorEstudiante.getInstance();  /*probar despues
 		/*Carrera carrera1 = new Carrera("Ingenieria en Sistemas"); */
 		ControladoInscripcion controladorInscripcion = ControladoInscripcion.getInstance();
+		ControladorPago controladorPago = ControladorPago.getInstance();
 		
 		ControladorCurso controladorCurso = ControladorCurso.getInstance();
 		
@@ -47,11 +49,11 @@ public class ProgramaPrincipal {
 		List<Materia> materias = new ArrayList<>();
 		
 		Materia materia;
-		materia=controladorMateria.crearMateria("Analisis Matematico", false);
+		materia=controladorMateria.crearMateria("Analisis Matematico", false, 15000);
 	    /*materias.add(new Materia(3400,"Analisis Matematico", true));*/
 	    materias.add(materia);
 		
-	    materia=controladorMateria.crearMateria("Programacion", false);
+	    materia=controladorMateria.crearMateria("Programacion", false, 20000);
 	    /*materias.add(new Materia(3500,"Programacion", false));*/
 	    materias.add(materia);
 	    
@@ -131,19 +133,19 @@ public class ProgramaPrincipal {
 		
 		//creo las materias para ing en sistemas(carrera1)
 		
-		Materia mat1=controladorMateria.crearMateria("fisica 1",false,null);
+		Materia mat1=controladorMateria.crearMateria("fisica 1",false,null, 10000);
 		materias.clear();
 		materias.add(mat1);
 		//fisica dos tiene correlativa para ing en sistemas, pero no para derecho
-		Materia mat2=controladorMateria.crearMateria("fisica 2",true,mat1);//fisica 2 para ing en sistemas
+		Materia mat2=controladorMateria.crearMateria("fisica 2",true,mat1, 12000);//fisica 2 para ing en sistemas
 		materias.add(mat2);
 		controladorCarrera.agregarMateria(materias,carrera1);
 	
 		
 		materias.clear();
-		Materia mat3=controladorMateria.crearMateria("filosofia",false,null);
-		Materia mat4=controladorMateria.crearMateria("fisica 1",false,null);
-		Materia mat5=controladorMateria.crearMateria("fisica 2",false,null);
+		Materia mat3=controladorMateria.crearMateria("filosofia",false,null, 10000);
+		Materia mat4=controladorMateria.crearMateria("fisica 1",false,null,10000);
+		Materia mat5=controladorMateria.crearMateria("fisica 2",false,null,12000);
 		materias.add(mat3);
 		materias.add(mat4);
 		materias.add(mat5);
@@ -155,8 +157,10 @@ public class ProgramaPrincipal {
 		controladorInscripcion.inscribir(estudiante, mat1,curso2);
 		
 		/* hacer paquetes de materias de primer año */
-		mat1.setCosto(50000.0);
+		/*mat1.setCosto(50000.0);*/
 		controladorInscripcion.calcularMonto(estudiante);
+		
+		controladorPago.seleccionarMedioDePago();
 		
 		List<Curso> cursosAsignados = controladorDocente.cursosAsignados(2);
 		List<Curso> listaBackUp=new ArrayList();

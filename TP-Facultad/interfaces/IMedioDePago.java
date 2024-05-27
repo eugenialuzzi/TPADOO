@@ -9,4 +9,5 @@ public interface IMedioDePago {
 
 
     public void pagar(Double precio);
+    
 }

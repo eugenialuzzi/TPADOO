@@ -52,19 +52,21 @@ public class Materia {
 		this.cargaHorariaMat = cargaHorariaMat;
 	}
 
-	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa) {
+	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa, double costo) {
 		this.codigoMateria = codigoMateria;
 		this.nombreMateria = nombreMateria;
 		this.esCorrelativa = esCorrelativa;
 		this.cargaHorariaMat = 4;
+		this.costo = costo;
 	}
 	
-	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa,Materia correlativaanterior) {
+	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa,Materia correlativaanterior, double costo) {
 		this.codigoMateria = codigoMateria;
 		this.nombreMateria = nombreMateria;
 		this.esCorrelativa = esCorrelativa;
 		this.cargaHorariaMat = 4;
 		this.materiaCorrelativaAnterior=correlativaanterior;
+		this.costo = costo;
 	}
 	
 
@@ -89,6 +91,8 @@ public class Materia {
 		this.materiaCorrelativaSiguiente = materiaCorrelativaSiguiente;
 	}
 
+	
+	
 	public List<Curso> getCursosDisponibles(){
 		List<Curso> cursosDisponibles = new ArrayList<>();
 		for (Curso c:cursosDeLaMateria) {
@@ -102,16 +106,15 @@ public class Materia {
 		return cursosDisponibles;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Materia [codigoMateria=" + codigoMateria + ", nombreMateria=" + nombreMateria + ", esCorrelativa="
 				+ esCorrelativa + ", cargaHorariaMat=" + cargaHorariaMat + ", materiaCorrelativaAnterior="
 				+ materiaCorrelativaAnterior + ", materiaCorrelativaSiguiente=" + materiaCorrelativaSiguiente
-				+ ", cursosDeLaMateria=" + cursosDeLaMateria + "]";
+				+ ", cursosDeLaMateria=" + cursosDeLaMateria + ", costo=" + costo + "]";
 	}
 
-	
+
     
     
 }
