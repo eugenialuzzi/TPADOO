@@ -16,7 +16,7 @@ public class Docente {
     private int idDocente;
     private List<Curso> cursos;
 	private int horasMensualesAsignadas;
-	private List<Curso> cursosPreferenciales;
+	private List<Curso> cursosPreferenciales=new ArrayList<Curso>();
 
     public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
