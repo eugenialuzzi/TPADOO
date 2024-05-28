@@ -98,6 +98,7 @@ public class ProgramaPrincipal {
 		Docente docente;
 		docente = controladorDocente.crearDocente("Esteban", "Lamonte");
 		docente = controladorDocente.crearDocente("Carmen", "Lopez");
+		Docente docente3 = controladorDocente.crearDocente("Alberto", "Perez");
 		
 		System.out.println(" ");
 		Aula aula1 = new Aula (123, 50);
@@ -223,6 +224,8 @@ public class ProgramaPrincipal {
 
 		controladorDocente.crearCursoPotencial(1, DiaSemana.LUNES, turnoTarde, 16);
 
+		controladorDocente.compararPreferenciasDocentes(docente, curso2);
+		
 		System.out.println("Tamaño de la lista: " + controladorDocente.buscarDocentePorSuId(1).getCursoPreferencial().size());
 		
 		
