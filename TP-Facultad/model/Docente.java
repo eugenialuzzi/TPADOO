@@ -35,6 +35,11 @@ public class Docente {
 	public void agregarCursoPreferencial(Curso cursoPreferencial){
 		cursosPreferenciales.add(cursoPreferencial);
 	}
+	
+	public void sacarCursoPreferencial(Curso cursoPreferencial){
+		cursosPreferenciales.remove(cursoPreferencial);
+	}
+	
 
 	public List<Curso> getCursoPreferencial(){
 		return cursosPreferenciales;

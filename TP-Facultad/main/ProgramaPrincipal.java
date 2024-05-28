@@ -111,7 +111,7 @@ public class ProgramaPrincipal {
 		
 		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turnoMañana);
 		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1, turnoTarde);
-		
+		Curso curso3= controladorCurso.crearCurso(1441, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turnoTarde);
 		
 	
 		cursos.add(curso1);
@@ -222,11 +222,11 @@ public class ProgramaPrincipal {
 		curso1.setTurnoInterface(turno);
 
 
-		controladorDocente.crearCursoPotencial(1, DiaSemana.LUNES, turnoTarde, 16);
-
-		controladorDocente.compararPreferenciasDocentes(docente, curso2);
+		controladorDocente.crearCursoPotencial(3, DiaSemana.LUNES, turnoTarde, 16);
+		controladorDocente.crearCursoPotencial(3, DiaSemana.SABADO, turnoMañana, 16);
+		controladorDocente.compararPreferenciasDocentes(docente3, curso3);
 		
-		System.out.println("Tamaño de la lista: " + controladorDocente.buscarDocentePorSuId(1).getCursoPreferencial().size());
+		System.out.println("Tamaño de la lista: " + controladorDocente.buscarDocentePorSuId(3).getCursoPreferencial().size());
 		
 		
 		System.out.println(" fin");

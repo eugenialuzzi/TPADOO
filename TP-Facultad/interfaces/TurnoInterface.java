@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface TurnoInterface {
+public interface TurnoInterface{
 
 	
 	public String nombre = "";

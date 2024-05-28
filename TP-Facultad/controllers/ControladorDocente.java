@@ -58,18 +58,22 @@ private static ControladorDocente instance;
 	}
 
     public void compararPreferenciasDocentes(Docente docente, Curso curso) {
-    	
+    	boolean bandera=false;
     	List<Curso> listaPreferencia=docente.getCursoPreferencial();
     	for(Curso cursoActual:listaPreferencia) {
     		if(curso.getTurno()==cursoActual.getTurno() && curso.getDiaSemana()==cursoActual.getDiaSemana()) {
     			docente.agregaCursoADocente(curso);
+    			bandera=true;
     			/* falta metodo que saque el curso de la lista de preferencia del docente */
-    			System.out.println("se le asigno el curso "+curso.getIdCurso()+"al docente "+docente.getApellido());
+    			System.out.println("se le asigno el curso "+curso.getIdCurso()+" al docente "+docente.getApellido());
+    			break;
     		}else {
     			continue;
     		}
     	}
+    	if (bandera==false) {
     	System.out.println("no hubo coincidencia con los horarios del docente "+docente.getApellido());
+    	}
     }
     
 		public void crearCursoPotencial(int idDocente, DiaSemana diaSemana, Turno turno, int horasAsignadas) {
