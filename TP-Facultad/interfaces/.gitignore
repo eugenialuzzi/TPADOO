@@ -7,3 +7,6 @@
 /PDF.class
 /Pago.class
 /TurnoInterface.class
+/TurnoMañana.class
+/TurnoTarde.class
+/TurnoNoche.class

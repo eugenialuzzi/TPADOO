@@ -12,29 +12,21 @@ public class Curso{
     private Aula aula;
     private DiaSemana diaSemana;
     private List<Materia> materias;
-    private Turno turno;
     private Materia materia;
+    private TurnoInterface turno;
     
-    ///aca cambio
-    private TurnoInterface turnoInterface;
     
     
     private int lugaresDisponibles;
     private int cantidadDeInscriptos;
 
-    public void setTurnoInterface(TurnoInterface turnoInterface) {
-		this.turnoInterface = turnoInterface;
-	}
-    
-    ///fin del cambio
-    
     
     
 	public void setMaterias(List<Materia> materias) {
 		this.materias = materias;
 	}
 
-	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, Turno turno) {
+	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, TurnoInterface turno) {
 		super();
 		this.idCurso = idCurso;
 		
@@ -94,13 +86,23 @@ public class Curso{
 		
 	}
 	 
-	 public Turno getTurno() {
+	 /*public Turno getTurno() {
 		return turno;
 	}
 
 	public void setTurno(Turno turno) {
 		this.turno = turno;
-	} 
+	} */
+	
+	public TurnoInterface getTurno() {
+	        return turno;
+	    }
+
+	public void setTurno(TurnoInterface turno) {
+	        this.turno = turno;
+	    }
+	
+	
 	
 	public DiaSemana getDiaSemana() {
 		return diaSemana;

@@ -4,6 +4,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 import controllers.ControladorDocente;
+import interfaces.TurnoInterface;
 import model.Curso;
 import model.Docente;
 import model.Informe;
@@ -33,7 +34,8 @@ public void mostrarInformeResumido(Informe informe) {
 	System.out.println(" el docente "+controladorDocente.buscarDocentePorSuId(informe.getIdDocente()).getApellido()+" tiene ");
 	
 	for (Curso cursoActual: informe.getCursos()) {
-		System.out.println(cursoActual.getIdCurso() +"     "+ cursoActual.getTurno());
+		TurnoInterface turno = cursoActual.getTurno();
+        System.out.println(cursoActual.getIdCurso() + " " + turno.queTurnoEs() + " " );
 	}
 	
 	

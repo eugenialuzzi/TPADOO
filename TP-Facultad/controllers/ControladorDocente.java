@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import interfaces.TurnoInterface;
 import model.Carrera;
 import model.Curso;
 import model.DiaSemana;
@@ -13,9 +13,7 @@ import model.Materia;
 import model.Turno;
 import model.Docente;
 
-/**
- * 
- */
+
 public class ControladorDocente {
 
 	
@@ -76,7 +74,7 @@ private static ControladorDocente instance;
     	}
     }
     
-		public void crearCursoPotencial(int idDocente, DiaSemana diaSemana, Turno turno, int horasAsignadas) {
+		public void crearCursoPotencial(int idDocente, DiaSemana diaSemana, TurnoInterface turno, int horasAsignadas) {
 		ControladorCurso controladorCurso = ControladorCurso.getInstance();
 		///Curso curso = new Curso(horasAsignadas, diaSemana, null, null, turno);
 		Curso curso = controladorCurso.crearCursoPotencial(horasAsignadas, diaSemana, null, null, turno);
