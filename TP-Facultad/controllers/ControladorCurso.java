@@ -35,8 +35,16 @@ public class ControladorCurso {
 	
    
     public Curso crearCurso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, Turno turno) {
-    	Curso curso = new Curso(idCurso, diaSemana, horario, aula,turno);
+    	Curso curso = new Curso(idCurso, diaSemana, horario, aula, turno);
     	cursos.add(curso);
+    	return curso;
+    	
+    }
+
+	   
+    public Curso crearCursoPotencial(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, Turno turno) {
+    	Curso curso = new Curso(idCurso, diaSemana, horario, aula, turno);
+    	
     	return curso;
     	
     }

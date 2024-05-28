@@ -213,11 +213,17 @@ public class ProgramaPrincipal {
 		factoryInforme.exportar(informe);
 
 		controladorMateria.getCantidadInscriptosPorCurso();
+
 		
 		
 		System.out.println("aca le asigno un turno noche a un curso");
 		TurnoInterface turno=new TurnoMañana();
 		curso1.setTurnoInterface(turno);
+
+
+		controladorDocente.crearCursoPotencial(1, DiaSemana.LUNES, turnoTarde, 16);
+
+		System.out.println("Tamaño de la lista: " + controladorDocente.buscarDocentePorSuId(1).getCursoPreferencial().size());
 		
 		
 		System.out.println(" fin");

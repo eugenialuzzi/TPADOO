@@ -1,6 +1,9 @@
 package model;
 
 import java.util.*;
+
+import controllers.ControladorCurso;
+
 import java.time.LocalTime;
 
 public class Docente {
@@ -13,6 +16,7 @@ public class Docente {
     private int idDocente;
     private List<Curso> cursos;
 	private int horasMensualesAsignadas;
+	private List<Curso> cursosPreferenciales;
 
     public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
@@ -28,6 +32,15 @@ public class Docente {
 	}
 
 	
+	public void agregarCursoPreferencial(Curso cursoPreferencial){
+		cursosPreferenciales.add(cursoPreferencial);
+	}
+
+	public List<Curso> getCursoPreferencial(){
+		return cursosPreferenciales;
+	}
+
+
 	public void setHorasMensualesAsignadas(String nombre) {
 		this.horasMensualesAsignadas = horasMensualesAsignadas;
 	}

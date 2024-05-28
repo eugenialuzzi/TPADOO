@@ -7,8 +7,10 @@ import java.util.List;
 
 import model.Carrera;
 import model.Curso;
+import model.DiaSemana;
 import model.Estudiante;
 import model.Materia;
+import model.Turno;
 import model.Docente;
 
 /**
@@ -54,6 +56,13 @@ private static ControladorDocente instance;
     	}
         
 	}
+
+		public void crearCursoPotencial(int idDocente, DiaSemana diaSemana, Turno turno, int horasAsignadas) {
+		ControladorCurso controladorCurso = ControladorCurso.getInstance();
+		Curso curso = new Curso(horasAsignadas, diaSemana, null, null, turno);
+    	curso = controladorCurso.crearCursoPotencial(horasAsignadas, diaSemana, null, null, turno);
+		buscarDocentePorSuId(idDocente).agregarCursoPreferencial(curso);
+    }
 
     public List<Curso> cursosAsignados(int idDocente) {
         List<Curso> cursosAsignados = new ArrayList<>();
