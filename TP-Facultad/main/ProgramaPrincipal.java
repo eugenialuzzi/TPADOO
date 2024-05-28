@@ -23,7 +23,9 @@ import model.Informe;
 import model.Materia;
 import model.Turno;
 import model.FactoryMethod.FactoryInforme;
-import model.TurnoMañana;
+import interfaces.TurnoMañana;
+import interfaces.TurnoTarde;
+import interfaces.TurnoNoche;
 import interfaces.TurnoInterface;
 
 public class ProgramaPrincipal {
@@ -105,13 +107,14 @@ public class ProgramaPrincipal {
 		Aula aula2 = new Aula (756, 50);
 		
 		List<Curso> cursos = new ArrayList<>();
-
-		Turno turnoMañana = new Turno("Mañana", LocalTime.of(7, 30,00) );
-		Turno turnoTarde = new Turno("Tarde", LocalTime.of(14, 30,00));
 		
-		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turnoMañana);
-		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1, turnoTarde);
-		Curso curso3= controladorCurso.crearCurso(1441, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turnoTarde);
+		TurnoInterface turno1 = new TurnoMañana();
+        TurnoInterface turno2 = new TurnoTarde();
+        TurnoInterface turno3 = new TurnoNoche();
+
+		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turno1);
+		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1, turno2);
+		Curso curso3= controladorCurso.crearCurso(1441, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turno2);
 		
 	
 		cursos.add(curso1);
@@ -219,11 +222,11 @@ public class ProgramaPrincipal {
 		
 		System.out.println("aca le asigno un turno noche a un curso");
 		TurnoInterface turno=new TurnoMañana();
-		curso1.setTurnoInterface(turno);
+		curso1.setTurno(turno1);
 
 
-		controladorDocente.crearCursoPotencial(3, DiaSemana.LUNES, turnoTarde, 16);
-		controladorDocente.crearCursoPotencial(3, DiaSemana.SABADO, turnoMañana, 16);
+		controladorDocente.crearCursoPotencial(3, DiaSemana.LUNES, turno, 16);
+		controladorDocente.crearCursoPotencial(3, DiaSemana.SABADO, turno, 16);
 		controladorDocente.compararPreferenciasDocentes(docente3, curso3);
 		
 		System.out.println("Tamaño de la lista: " + controladorDocente.buscarDocentePorSuId(3).getCursoPreferencial().size());

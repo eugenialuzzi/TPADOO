@@ -1,9 +1,9 @@
-package model;
+	package model;
 
 import java.util.*;
 import java.time.LocalTime;
 import interfaces.TurnoInterface;
-import interfaces.TurnoInterface;
+
 
 public class Curso{
 
