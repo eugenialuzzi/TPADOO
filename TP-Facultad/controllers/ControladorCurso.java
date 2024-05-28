@@ -12,6 +12,7 @@ import model.Curso;
 import model.DiaSemana;
 import model.Materia;
 import model.Turno;
+import interfaces.TurnoInterface;
 
 
 public class ControladorCurso {
@@ -34,7 +35,7 @@ public class ControladorCurso {
 	
 	
    
-    public Curso crearCurso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, Turno turno) {
+    public Curso crearCurso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula,  TurnoInterface turno) {
     	Curso curso = new Curso(idCurso, diaSemana, horario, aula, turno);
     	cursos.add(curso);
     	return curso;
@@ -42,7 +43,7 @@ public class ControladorCurso {
     }
 
 	   
-    public Curso crearCursoPotencial(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, Turno turno) {
+    public Curso crearCursoPotencial(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, TurnoInterface turno) {
     	Curso curso = new Curso(idCurso, diaSemana, horario, aula, turno);
     	
     	return curso;
@@ -52,7 +53,7 @@ public class ControladorCurso {
     /*esto es lo nuevo*/
     public void asignarUnTurnoEspecialACurso(int idCurso , TurnoInterface turnoInterface) {
     	
-    	buscarCursoPorSuId(idCurso).setTurnoInterface(turnoInterface);
+    	buscarCursoPorSuId(idCurso).setTurno(turnoInterface);
     }
     
     
