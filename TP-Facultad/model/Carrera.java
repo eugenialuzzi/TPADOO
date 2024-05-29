@@ -9,7 +9,11 @@ public class Carrera {
     private List<Materia> materias;
     private Facultad facultad;
 	
-    
+	public Carrera(String nombreDeCarrera) {
+        this.nombreDeCarrera = nombreDeCarrera;
+        this.cargaHorariaMax = 20;
+        this.materias = new ArrayList<>();
+    }
     
     public String getNombreDeCarrera() {
 		return nombreDeCarrera;
@@ -27,22 +31,6 @@ public class Carrera {
 		this.materias = materias;
 	}
 
-	public Carrera(String nombreDeCarrera) {
-        this.nombreDeCarrera = nombreDeCarrera;
-        this.cargaHorariaMax = 20;
-        this.materias = new ArrayList<>();
-    }
-
-    public void agregarMateriasAUnaCarrera(Materia materia){
-    	materias.add(materia);
-    	System.out.println("se agrego la materia " + materia.getNombreMateria() + " a la carrera: " + nombreDeCarrera);
-    }
-    
-    public void quitarMateriaDeUnaCarrera(Materia materia) {
-    	materias.remove(materia);
-    	System.out.println("se quito la materia" + materia.getNombreMateria() + " a la carrera: " + nombreDeCarrera);
-    }
-    
     
 	public int getCargaHorariaMax() {
 		return cargaHorariaMax;
@@ -59,6 +47,16 @@ public class Carrera {
 	
     public List<Materia> getMaterias() {
         return materias;
+    }
+    
+    public void agregarMateriasAUnaCarrera(Materia materia){
+    	materias.add(materia);
+    	System.out.println("se agrego la materia " + materia.getNombreMateria() + " a la carrera: " + nombreDeCarrera);
+    }
+    
+    public void quitarMateriaDeUnaCarrera(Materia materia) {
+    	materias.remove(materia);
+    	System.out.println("se quito la materia" + materia.getNombreMateria() + " a la carrera: " + nombreDeCarrera);
     }
     
     

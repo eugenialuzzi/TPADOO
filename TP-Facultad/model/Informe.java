@@ -44,21 +44,6 @@ public class Informe {
     public String getTipoInforme(){
         return tipoInforme;
     } 
-   
-    public String toString(){
-    	
-        StringBuilder sb = new StringBuilder();
-        sb.append("Informe(idDocente)").append(idDocente).append(" , listaCursos");
-        for (Curso a : cursos) {
-            sb.append(a).append("/n");
-            System.out.println();
-        }
-        sb.append('}');
-        return sb.toString();
-        
-    	
-    	
-    }
 
 
 	public int getIdDocente() {
@@ -75,7 +60,21 @@ public class Informe {
 		this.idInforme = idInforme;
 	}   
 
- 
+	   
+    public String toString(){
+    	
+        StringBuilder sb = new StringBuilder();
+        sb.append("Informe(idDocente)").append(idDocente).append(" , listaCursos");
+        for (Curso a : cursos) {
+            sb.append(a).append("/n");
+            System.out.println();
+        }
+        sb.append('}');
+        return sb.toString();
+        
+    	
+    	
+    }
     
 
 

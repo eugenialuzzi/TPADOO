@@ -60,35 +60,6 @@ public class Estudiante {
 		this.materiasActuales = materiasActuales;
 	}
     
-    
-	public boolean yaAproboLaMateria (Materia materia) {
-		if (materia==null)
-			return true;
-		
-		if (materiasAprobadas.contains(materia) ) {
-			return true;
-		}
-			else 		{
-				return false;
-			}
-	}
-	
-    public void agregarMateriaAprobadaALista (Materia materia) {
-    	materiasActuales.remove(materia);
-    	materiasAprobadas.add(materia);
-    	
-    }
-    
-    public void agregarMateriaQueEstaCursando (Materia materia) {
-    	materiasActuales.add(materia);
-    	
-    }
-    
-    public void quitarMateriaQueEstaCursando (Materia materia) {
-    	materiasActuales.remove(materia);
-    }
-    
-    
     public int getCargaHorariaActual() {
     	int total=0;
     	for (Materia materia:materiasActuales ) {
@@ -104,7 +75,34 @@ public class Estudiante {
     	
     }
     
-
+    
+    public void agregarMateriaAprobadaALista (Materia materia) {
+    	materiasActuales.remove(materia);
+    	materiasAprobadas.add(materia);
+    	
+    }
+    
+    public void agregarMateriaQueEstaCursando (Materia materia) {
+    	materiasActuales.add(materia);
+    	
+    }
+    
+    public void quitarMateriaQueEstaCursando (Materia materia) {
+    	materiasActuales.remove(materia);
+    }
+    
+	public boolean yaAproboLaMateria (Materia materia) {
+		if (materia==null)
+			return true;
+		
+		if (materiasAprobadas.contains(materia) ) {
+			return true;
+		}
+			else 		{
+				return false;
+			}
+	}
+	
 	@Override
 	public String toString() {
 		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", idEstudiante=" + idEstudiante

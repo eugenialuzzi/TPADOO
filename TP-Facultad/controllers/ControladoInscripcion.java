@@ -12,14 +12,13 @@ import model.Curso;
 import model.Estudiante;
 import model.Materia;
 
-/**
- * 
- */
 public class ControladoInscripcion {
 	
 	
 private static ControladoInscripcion instance;
-	
+
+ControladorPago controladorPago = new ControladorPago();
+
 	private ControladoInscripcion() { 
 		
 	}
@@ -83,7 +82,7 @@ private static ControladoInscripcion instance;
         }
     }
 
-	ControladorPago controladorPago = new ControladorPago();
+
 
     public void calcularMonto(Estudiante estudiante) {
 		Double precio = 0.0;

@@ -14,7 +14,23 @@ public class Materia {
     private List<Curso> cursosDeLaMateria;
 	private Double costo;
 
+
+	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa, double costo) {
+		this.codigoMateria = codigoMateria;
+		this.nombreMateria = nombreMateria;
+		this.esCorrelativa = esCorrelativa;
+		this.cargaHorariaMat = 4;
+		this.costo = costo;
+	}
 	
+	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa,Materia correlativaanterior, double costo) {
+		this.codigoMateria = codigoMateria;
+		this.nombreMateria = nombreMateria;
+		this.esCorrelativa = esCorrelativa;
+		this.cargaHorariaMat = 4;
+		this.materiaCorrelativaAnterior=correlativaanterior;
+		this.costo = costo;
+	}
 
 	public void setCosto(Double costo){
 		this.costo = costo;
@@ -40,9 +56,6 @@ public class Materia {
 		this.nombreMateria = nombreMateria;
 	}
 
-	public boolean isEsCorrelativa() {
-		return esCorrelativa;
-	}
 
 	public void setEsCorrelativa(boolean esCorrelativa) {
 		this.esCorrelativa = esCorrelativa;
@@ -52,22 +65,6 @@ public class Materia {
 		this.cargaHorariaMat = cargaHorariaMat;
 	}
 
-	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa, double costo) {
-		this.codigoMateria = codigoMateria;
-		this.nombreMateria = nombreMateria;
-		this.esCorrelativa = esCorrelativa;
-		this.cargaHorariaMat = 4;
-		this.costo = costo;
-	}
-	
-	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa,Materia correlativaanterior, double costo) {
-		this.codigoMateria = codigoMateria;
-		this.nombreMateria = nombreMateria;
-		this.esCorrelativa = esCorrelativa;
-		this.cargaHorariaMat = 4;
-		this.materiaCorrelativaAnterior=correlativaanterior;
-		this.costo = costo;
-	}
 	
 
 	public int getCargaHorariaMat() {
@@ -104,6 +101,10 @@ public class Materia {
 			}
 		}
 		return cursosDisponibles;
+	}
+	
+	public boolean isEsCorrelativa() {
+		return esCorrelativa;
 	}
 
 	@Override

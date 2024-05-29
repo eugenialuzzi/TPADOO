@@ -11,7 +11,9 @@ import model.Materia;
 public class ControladorCarrera {
 	
 private static ControladorCarrera instance;
-	
+private List<Carrera> Carreras= new ArrayList<Carrera>();
+
+
 	private ControladorCarrera () { 
 		
 	}
@@ -29,7 +31,7 @@ private static ControladorCarrera instance;
 	    }
 	
 	
-	private List<Carrera> Carreras= new ArrayList<Carrera>();
+
 	
 	public Carrera crearCarrera(String NombreDeCarrera) {
 		

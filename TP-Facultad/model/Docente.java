@@ -18,9 +18,7 @@ public class Docente {
 	private int horasMensualesAsignadas;
 	private List<Curso> cursosPreferenciales=new ArrayList<Curso>();
 
-    public void setCursos(List<Curso> cursos) {
-		this.cursos = cursos;
-	}
+
 
     public Docente(String nombre, String apellido, int idDocente) {
 		super();
@@ -31,21 +29,19 @@ public class Docente {
         System.out.println("se creo el docente: " + nombre + " " + apellido + ", id = " + idDocente);
 	}
 
-	
-	public void agregarCursoPreferencial(Curso cursoPreferencial){
-		cursosPreferenciales.add(cursoPreferencial);
+    public void setCursos(List<Curso> cursos) {
+		this.cursos = cursos;
 	}
-	
-	public void sacarCursoPreferencial(Curso cursoPreferencial){
-		cursosPreferenciales.remove(cursoPreferencial);
+    
+	public List<Curso> getCursos() {
+		return cursos;
 	}
-	
+
 
 	public List<Curso> getCursoPreferencial(){
 		return cursosPreferenciales;
 	}
-
-
+	
 	public void setHorasMensualesAsignadas(String nombre) {
 		this.horasMensualesAsignadas = horasMensualesAsignadas;
 	}
@@ -55,20 +51,10 @@ public class Docente {
 		return horasMensualesAsignadas;
 	}
 
-	public void calcularHorasAsignadas(){
-		int horas = 0;
-		for(Curso curso:cursos){
-			horas = horas +curso.getMateria().getCargaHorariaMat();
-		}
-		horasMensualesAsignadas = horas;
-	}
-
-    
 
 	public String getNombre() {
 		return nombre;
 	}
-
 
 
 	public void setNombre(String nombre) {
@@ -101,17 +87,26 @@ public class Docente {
 
 
 
-	public List<Curso> getCursos() {
-		return cursos;
+	public void calcularHorasAsignadas(){
+		int horas = 0;
+		for(Curso curso:cursos){
+			horas = horas +curso.getMateria().getCargaHorariaMat();
+		}
+		horasMensualesAsignadas = horas;
 	}
-
-
 
 	public void agregaCursoADocente(Curso curso){
     	cursos.add(curso);
     	System.out.println("se agrego el curso " + curso.getIdCurso()  +" en el horario:  " + curso.getHorario() + " al docente: " + nombre);
     }
 	
+	public void agregarCursoPreferencial(Curso cursoPreferencial){
+		cursosPreferenciales.add(cursoPreferencial);
+	}
+	
+	public void sacarCursoPreferencial(Curso cursoPreferencial){
+		cursosPreferenciales.remove(cursoPreferencial);
+	}
 	
 
 	@Override
