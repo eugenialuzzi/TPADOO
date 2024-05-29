@@ -62,7 +62,6 @@ private static ControladorDocente instance;
     		if(curso.getTurno()==cursoActual.getTurno() && curso.getDiaSemana()==cursoActual.getDiaSemana()) {
     			docente.agregaCursoADocente(curso);
     			bandera=true;
-    			/* falta metodo que saque el curso de la lista de preferencia del docente */
     			System.out.println("se le asigno el curso "+curso.getIdCurso()+" al docente "+docente.getApellido());
     			break;
     		}else {

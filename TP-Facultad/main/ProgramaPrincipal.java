@@ -14,6 +14,7 @@ import controllers.ControladorMateria;
 import controllers.ControladorPago;
 import model.Aula;
 import model.Carrera;
+import model.CronogramaDocente;
 import model.Curso;
 import model.DiaSemana;
 import model.Docente;
@@ -228,15 +229,23 @@ public class ProgramaPrincipal {
 		controladorDocente.crearCursoPotencial(3, DiaSemana.LUNES, turno, 16);
 		controladorDocente.crearCursoPotencial(3, DiaSemana.SABADO, turno, 16);
 		controladorDocente.compararPreferenciasDocentes(docente3, curso3);
-		
+
 		System.out.println("Tamaño de la lista: " + controladorDocente.buscarDocentePorSuId(3).getCursoPreferencial().size());
+
+		CronogramaDocente cronogramaDocente = new CronogramaDocente();
+		
+		cronogramaDocente.imprimirCronogramaDocente(cronogramaDocente.crearCronogramaSemanal(2));
+		
+
+		for (Curso curso : docente3.getCursos()) {
+			System.out.println("curso: " + curso);
+		}
 		
 		
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
 		
 	}
-
 
     
 
