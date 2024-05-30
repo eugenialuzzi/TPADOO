@@ -187,14 +187,19 @@ public class ProgramaPrincipal {
         System.out.println("Cronograma semanal del docente:");
         System.out.println("DIA " + " - "+ "CURSO "+ "- " + "HORARIO");
 
+        
+      
         for (String cursoInfo : cronograma) {
             System.out.println(cursoInfo);
         }  
-
+        System.out.println("");
+        System.out.println("otro intento");
         
-       
+        cronograma = controladorDocente.cronogramaSemanal(2);
+       CronogramaDocente cronogramaDocente=new CronogramaDocente();
+       cronogramaDocente.imprimirCronogramaDocente(cronograma);
 		// Informes
-
+       System.out.println("");
 		
 		FactoryInforme factoryInforme = new FactoryInforme();
 		 
@@ -227,21 +232,17 @@ public class ProgramaPrincipal {
 		curso1.setTurno(turno1);
 
 
-		controladorDocente.crearCursoPotencial(3, DiaSemana.LUNES, turno, 16);
+		controladorDocente.crearCursoPotencial(3, DiaSemana.LUNES, turno2, 16);
 		controladorDocente.crearCursoPotencial(3, DiaSemana.SABADO, turno, 16);
 		controladorDocente.compararPreferenciasDocentes(docente3, curso3);
 
 		System.out.println("Tamaño de la lista: " + controladorDocente.buscarDocentePorSuId(3).getCursoPreferencial().size());
 
-		CronogramaDocente cronogramaDocente = new CronogramaDocente();
 		
-		cronogramaDocente.imprimirCronogramaDocente(cronogramaDocente.crearCronogramaSemanal(2));
+		
+		cronogramaDocente.imprimirCronogramaDocente(cronogramaDocente.crearCronogramaSemanal(3));
 		
 
-		for (Curso curso : docente3.getCursos()) {
-			System.out.println("curso: " + curso);
-		}
-		
 		
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
