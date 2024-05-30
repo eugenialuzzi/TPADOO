@@ -9,7 +9,7 @@ public class TurnoNoche implements TurnoInterface {
 
 	@Override
 	public String queFranjaHorariaEs() {
-		return "La franja horaria es de 18:45 a : 22:45 pm";
+		return "18:45 a : 22:45 pm";
 	}
 
 }
