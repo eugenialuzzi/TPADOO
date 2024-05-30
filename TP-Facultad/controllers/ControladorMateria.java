@@ -32,16 +32,16 @@ public class ControladorMateria {
 
    
     
-    public Materia crearMateria(String NombreMateria,boolean correlatividad, double costo) {
-    	Materia materia = new Materia(contador,NombreMateria,correlatividad, costo);
+    public Materia crearMateria(String NombreMateria,boolean correlatividad, double costo, int cargaHorariaMat) {
+    	Materia materia = new Materia(contador,NombreMateria,correlatividad, costo,cargaHorariaMat);
     	contador++;
     	materias.add(materia);
     	
     	return materia;
     }
     
-    public Materia crearMateria(String NombreMateria,boolean correlatividad,Materia correlativaAnterior, double costo) {
-    	Materia materia = new Materia(contador,NombreMateria,correlatividad,correlativaAnterior, costo);
+    public Materia crearMateria(String NombreMateria,boolean correlatividad,Materia correlativaAnterior, double costo, int cargaHorariaMat) {
+    	Materia materia = new Materia(contador,NombreMateria,correlatividad,correlativaAnterior, costo, cargaHorariaMat);
     	contador++;
     	materias.add(materia);
     	

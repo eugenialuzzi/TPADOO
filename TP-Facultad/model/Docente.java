@@ -87,12 +87,18 @@ public class Docente {
 
 
 
-	public void calcularHorasAsignadas(){
+	public int calcularHorasAsignadas(){
+		System.out.println("ingreso a calcular horas en docente");
 		int horas = 0;
 		for(Curso curso:cursos){
-			horas = horas +curso.getMateria().getCargaHorariaMat();
-		}
-		setHorasMensualesAsignadas(horas);
+			horas +=curso.getMaterias().get(0).getCargaHorariaMat();
+			///horas +=curso.getMateria().get
+					///getCargaHorariaMat();
+			///for(Materia materia : curso.getMaterias()){ 
+				///horas += materia.getCargaHorariaMat();
+			}
+		
+		return horas;
 	}
 
 	public void agregaCursoADocente(Curso curso){

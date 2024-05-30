@@ -15,19 +15,19 @@ public class Materia {
 	private Double costo;
 
 
-	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa, double costo) {
+	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa, double costo, int cargaHorariaMat) {
 		this.codigoMateria = codigoMateria;
 		this.nombreMateria = nombreMateria;
 		this.esCorrelativa = esCorrelativa;
-		this.cargaHorariaMat = 4;
+		this.cargaHorariaMat = cargaHorariaMat ;
 		this.costo = costo;
 	}
 	
-	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa,Materia correlativaanterior, double costo) {
+	public Materia(int codigoMateria, String nombreMateria, boolean esCorrelativa,Materia correlativaanterior, double costo,int cargaHorariaMateria) {
 		this.codigoMateria = codigoMateria;
 		this.nombreMateria = nombreMateria;
 		this.esCorrelativa = esCorrelativa;
-		this.cargaHorariaMat = 4;
+		this.cargaHorariaMat = cargaHorariaMateria;
 		this.materiaCorrelativaAnterior=correlativaanterior;
 		this.costo = costo;
 	}

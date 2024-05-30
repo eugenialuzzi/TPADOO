@@ -50,6 +50,10 @@ private static ControladorDocente instance;
     
     public void agregarCursoADocente(List<Curso> cursos, Docente docente) {
     	for (Curso c : cursos) {
+    		List <Curso> lista=docente.getCursos();
+    		if (lista.contains(c)) {
+    			continue;
+    		}
     		docente.agregaCursoADocente(c);
     	}
         
@@ -128,7 +132,8 @@ private static ControladorDocente instance;
 	
 	
 	public int horasTrabajadasDocente (int idDocente) {
-		int horasTrabajadas=buscarDocentePorSuId(idDocente).getHorasMensualesAsignadas();
+		System.out.println("ingreso en horas trabajadas en controlador dodente");
+		int horasTrabajadas=buscarDocentePorSuId(idDocente).calcularHorasAsignadas();
 		
 		return horasTrabajadas;
 	}

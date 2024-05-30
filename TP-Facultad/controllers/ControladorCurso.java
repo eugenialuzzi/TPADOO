@@ -78,16 +78,19 @@ public class ControladorCurso {
 	}
 	
  
-    private Curso buscarCursoPorSuId(int idCursoBuscado) {
+    public Curso buscarCursoPorSuId(int idCursoBuscado) {
+    	
     	for (Curso curso:cursos) {
     		int idActual=curso.getIdCurso();
     		if(idActual== idCursoBuscado) {
+    			
     			return curso;
     		}
-    		else {
-    			System.out.println("no se encontro un curso con esa id");
+    		else {continue;
+    			
     		}
     	}
+    	System.out.println("no se encontro un curso con esa id");
     	return null;
     }
     
