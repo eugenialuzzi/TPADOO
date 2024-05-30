@@ -242,8 +242,9 @@ public class ProgramaPrincipal {
 		
 		cronogramaDocente.imprimirCronogramaDocente(cronogramaDocente.crearCronogramaSemanal(3));
 		
-
-		
+		System.out.println("horas de trabajo de un docente: "+	controladorDocente.horasTrabajadasDocente(1));
+	
+	
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
 		

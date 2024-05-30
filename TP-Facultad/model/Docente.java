@@ -42,7 +42,7 @@ public class Docente {
 		return cursosPreferenciales;
 	}
 	
-	public void setHorasMensualesAsignadas(String nombre) {
+	public void setHorasMensualesAsignadas(int horasMensualesAsignadas) {
 		this.horasMensualesAsignadas = horasMensualesAsignadas;
 	}
 
@@ -92,7 +92,7 @@ public class Docente {
 		for(Curso curso:cursos){
 			horas = horas +curso.getMateria().getCargaHorariaMat();
 		}
-		horasMensualesAsignadas = horas;
+		setHorasMensualesAsignadas(horas);
 	}
 
 	public void agregaCursoADocente(Curso curso){

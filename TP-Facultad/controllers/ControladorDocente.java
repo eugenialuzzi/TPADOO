@@ -125,4 +125,11 @@ private static ControladorDocente instance;
 		System.out.println("no se encontro un docente con esa id");
 		return null;
 	}
+	
+	
+	public int horasTrabajadasDocente (int idDocente) {
+		int horasTrabajadas=buscarDocentePorSuId(idDocente).getHorasMensualesAsignadas();
+		
+		return horasTrabajadas;
+	}
 }
