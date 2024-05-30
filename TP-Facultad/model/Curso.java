@@ -17,6 +17,7 @@ public class Curso{
     
     
     
+    
     private int lugaresDisponibles;
     private int cantidadDeInscriptos;
 
@@ -36,6 +37,18 @@ public class Curso{
 		this.materias = new ArrayList<>();
 		this.turno=turno;
 	}
+	/*TEST HORARIO EUGE*/
+	public Curso(int idCurso, DiaSemana diaSemana, Aula aula, TurnoInterface turno) {
+		super();
+		this.idCurso = idCurso;
+		this.aula = aula;
+		this.diaSemana = diaSemana;
+		this.materias = new ArrayList<>();
+		this.turno=turno;
+		this.turno.horaInicio();
+        this.turno.horaFin();
+	}
+
 
 
 	public int getIdCurso() {
@@ -119,7 +132,7 @@ public class Curso{
 	
 	public void agregarMateriaACurso(Materia materia){
     	materias.add(materia);
-    	System.out.println("se agrego la materia " + materia.getNombreMateria() + " al curso ID: " + idCurso + ". aula numero: " + aula.getNumeroAula() +", en el horario: " + horario);
+    	System.out.println("se agrego la materia " + materia.getNombreMateria() + " al curso ID: " + idCurso + ". aula numero: " + aula.getNumeroAula() +", en el horario de : " + turno.horaInicio()+" a " +turno.horaFin());
     }
 	
 	public boolean validarMaxInscriptos(){

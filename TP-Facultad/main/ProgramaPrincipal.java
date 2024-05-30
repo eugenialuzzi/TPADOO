@@ -113,11 +113,12 @@ public class ProgramaPrincipal {
         TurnoInterface turno2 = new TurnoTarde();
         TurnoInterface turno3 = new TurnoNoche();	
 
-		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turno1);
-		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, LocalTime.of(07, 45,00), aula1, turno2);
-		Curso curso3= controladorCurso.crearCurso(1441, DiaSemana.LUNES, LocalTime.of(18, 30,00), aula1, turno2);
+		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, aula1, turno1);
+		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, aula1, turno2);
+		Curso curso3= controladorCurso.crearCurso(1441, DiaSemana.LUNES, aula1, turno2);
+
 		
-	
+		System.out.println();
 		cursos.add(curso1);
 		cursos.add(curso2);
 		

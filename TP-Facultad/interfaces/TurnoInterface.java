@@ -1,8 +1,11 @@
 package interfaces;
 
+import java.time.LocalTime;
+
 public interface TurnoInterface{
 
 
-	public String queTurnoEs();
-	public String queFranjaHorariaEs();
+	String queTurnoEs();
+	LocalTime horaInicio();
+	LocalTime horaFin();
 }

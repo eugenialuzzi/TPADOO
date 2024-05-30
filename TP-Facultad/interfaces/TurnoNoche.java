@@ -1,5 +1,7 @@
 package interfaces;
 
+import java.time.LocalTime;
+
 public class TurnoNoche implements TurnoInterface {
 
 	@Override
@@ -8,8 +10,12 @@ public class TurnoNoche implements TurnoInterface {
 	}
 
 	@Override
-	public String queFranjaHorariaEs() {
-		return "18:45 a : 22:45 pm";
+	public LocalTime horaInicio() {
+		return LocalTime.of(18,30,00);
+	}
+	@Override
+	public LocalTime horaFin(){
+		return LocalTime.of(22, 30,00);
 	}
 
 }

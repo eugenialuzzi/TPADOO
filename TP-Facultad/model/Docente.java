@@ -97,7 +97,7 @@ public class Docente {
 
 	public void agregaCursoADocente(Curso curso){
     	cursos.add(curso);
-    	System.out.println("se agrego el curso " + curso.getIdCurso()  +" en el horario:  " + curso.getHorario() + " al docente: " + nombre);
+    	System.out.println("se agrego el curso " + curso.getIdCurso()  +" en el horario de  " + curso.getTurno().horaInicio()+ " a " +curso.getTurno().horaFin() + " al docente: " + nombre);
     }
 	
 	public void agregarCursoPreferencial(Curso cursoPreferencial){

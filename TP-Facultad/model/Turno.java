@@ -18,7 +18,13 @@ public class Turno {
         this.rangoHorario = rangoHorario;
         this.turnoStrategy = turnoStrategy;
     }
-
+	/*TEST HORARIO EUGE*/
+    public Turno(String nombre, TurnoInterface turnoStrategy) {
+        this.nombre = nombre;
+        this.turnoStrategy = turnoStrategy;
+        this.turnoStrategy.horaInicio();
+        this.turnoStrategy.horaFin();
+    }
     public void setCursos(List<Curso> cursos) {
         this.cursos = cursos;
     }
@@ -35,15 +41,32 @@ public class Turno {
         this.rangoHorario = rangoHorario;
     }
 
-    public LocalTime getRangoHorario() {
-        return rangoHorario;
+    public LocalTime gethoraInicio(){
+        return turnoStrategy.horaInicio();
     }
+    public void sethoraInicio(LocalTime horaInicio){
+        this.turnoStrategy.horaInicio();
+    }
+    
+    public LocalTime gethoraFin(){
+        return turnoStrategy.horaFin();
+    }
+    public void sethoraFin(LocalTime horaFin){
+        this.turnoStrategy.horaFin();
+    }
+
 
     public String queTurnoEs() {
         return turnoStrategy.queTurnoEs();
     }
 
-    public String getQueFranjaHorariaEs() {
-        return turnoStrategy.queFranjaHorariaEs();
-    }
+	public TurnoInterface getTurnoStrategy() {
+		return turnoStrategy;
+	}
+
+	public void setTurnoStrategy(TurnoInterface turnoStrategy) {
+		this.turnoStrategy = turnoStrategy;
+	}
+
+  
 }
