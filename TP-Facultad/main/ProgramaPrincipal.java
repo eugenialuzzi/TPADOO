@@ -182,7 +182,7 @@ public class ProgramaPrincipal {
 		System.out.println();
         List<String> cronograma = adminFacade.cronogramaSemanal(2);
 		System.out.println(" ");
-        System.out.println("Cronograma semanal del docente:");
+        System.out.println("Cronograma semanal del docente "+docente.getApellido()+" :");
         System.out.println("DIA " + " - "+ "CURSO "+ "- " + "HORARIO");
 
         
@@ -192,9 +192,10 @@ public class ProgramaPrincipal {
         }  
      
     	System.out.println();
-        cronograma = adminFacade.cronogramaSemanal(2);
+        cronograma = adminFacade.cronogramaSemanal(3);
        CronogramaDocente cronogramaDocente=new CronogramaDocente();
        cronogramaDocente.imprimirCronogramaDocente(cronograma);
+       
 		// Informes
        System.out.println("");
 		
