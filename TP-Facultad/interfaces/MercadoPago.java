@@ -2,9 +2,7 @@ package interfaces;
 
 import java.util.*;
 
-/**
- * 
- */
+
 public class MercadoPago implements IMedioDePago {
 
     public MercadoPago() {

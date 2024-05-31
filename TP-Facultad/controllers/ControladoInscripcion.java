@@ -66,11 +66,6 @@ ControladorPago controladorPago = new ControladorPago();
     }
 
 
-    public Integer validarCantCursosInscriptos( Estudiante estudiante) {
-        
-        return null;
-    }
-
     public Boolean validarCorrelativas( Estudiante estudiante,  Materia materia) {
     	Carrera laCarrera=estudiante.getCarrera();
     	Materia correlativa=laCarrera.Correlatividad(materia);
@@ -141,27 +136,6 @@ ControladorPago controladorPago = new ControladorPago();
 			
 			estudiante1.agregarMateriaQueEstaCursando(materia);
 		}
-		 /* falta la parte del cobro hay que sumarle esa materia nueva al costo del alumno */
-		
-		//Carrera carrera=estudiante1.getCarrera();
-		
-		//Materia correlativaAnterior=mat2.getMateriaCorrelativaAnterior();
-		//if(correlativaAnterior!=null) {
-			//List<Materia> materiasAprobadas=estudiante1.getMateriasAprobadas();
-			/*Verificar si el estudiante tiene cursada la correlativa necesaria*/
-	        //if (materiasAprobadas.contains(correlativaAnterior)) {
-	          //  System.out.println("El alumno " +estudiante1.getNombre()+ " se puede anotar a la materia "+ mat2.getNombreMateria());
-	            /*esto hay que cambiarlo no lo puedo anotar a una materia sino a un curso especifico */
-	            //estudiante1.getMateriasActuales().add(mat2);
-	        //} else {
-	          //  System.out.println("El alumno NO se puede anotar a la materia "+ mat2.getNombreMateria()+", le faltan correlativas");
-	        //}
-		//}else {
-			//System.out.println("esta materia " +  mat2.getNombreMateria() +" no tiene correlativas anteriores");
-			/*aca lo tendria que anotar */
-			/* esto hay que sacarlo no lo puedo anotar a una materia sino a un curso especifico  */
-			//estudiante1.getMateriasActuales().add(mat2);
-		//}
 		
 		return estudiante1;
 		
@@ -171,7 +145,7 @@ ControladorPago controladorPago = new ControladorPago();
 		Materia correlativaAnterior=mat2.getMateriaCorrelativaAnterior();
 		if(correlativaAnterior!=null) {
 			List<Materia> materiasAprobadas=estudiante1.getMateriasAprobadas();
-			// Verificar si el estudiante tiene cursada la correlativa necesaria
+			
 	        if (materiasAprobadas.contains(correlativaAnterior)) {
 	            System.out.println("El alumno " +estudiante1.getNombre()+ 
 	            		" se puede anotar a la materia "+ mat2.getNombreMateria());

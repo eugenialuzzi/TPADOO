@@ -58,9 +58,6 @@ public class Curso{
 
 	public int getlugaresDisponibles() {
 		lugaresDisponibles=(aula.getCapacidadMax()-cantidadDeInscriptos);
-		
-		//System.out.println("capacidad aula dentro de la clase curso es: "+aula.getCapacidadMax() + "y la cantidad de inscriptos es : "+cantidadDeInscriptos);
-		
 		return lugaresDisponibles;
 	}
 	
@@ -124,8 +121,7 @@ public class Curso{
 	}
 
 	public Boolean tieneVacante(Curso curso) {
-	/*int capacidadAula=curso.getAula().getCapacidadMax();
-	int   */
+	
 		if (curso.getlugaresDisponibles()-1>=0) {
 		return true;
 		}

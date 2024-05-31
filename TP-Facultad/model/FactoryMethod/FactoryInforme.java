@@ -30,7 +30,7 @@ ControladorDocente controladorDocente = ControladorDocente.getInstance();
 public void mostrarInformeResumido(Informe informe) {
 	System.out.println("segun el informe "+informe.getIdInforme());
 	
-	///controladorDocente.buscarDocentePorSuId(informe.getIdDocente()).getApellido();
+	
 	System.out.println(" el docente "+controladorDocente.buscarDocentePorSuId(informe.getIdDocente()).getApellido()+" tiene ");
 	
 	for (Curso cursoActual: informe.getCursos()) {

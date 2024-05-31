@@ -115,7 +115,7 @@ public class Docente {
 	@Override
 	public String toString() {
 		return "Docente [nombre=" + nombre + ", apellido=" + apellido + ", idDocente=" + idDocente
-				+ ", cursosAsignados=" + /*listadoCursos +*/ "]";
+				+ ", cursosAsignados=" +  "]";
 	}
 
 }

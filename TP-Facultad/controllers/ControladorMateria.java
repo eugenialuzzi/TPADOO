@@ -76,13 +76,7 @@ public class ControladorMateria {
 		}
 	}
 
-	public void getCursosDisponibles(Materia materia) {
 
-		if(materia.getCursosDisponibles() == null){
-			System.out.println("No hay cursos disponibles");
-		}
-
-	}
    
 
 }

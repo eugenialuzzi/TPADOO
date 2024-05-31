@@ -3,11 +3,10 @@ package controllers;
 import java.util.*;
 
 import model.Carrera;
+import model.Estudiante;
 import model.Materia;
 
-/**
- * 
- */
+
 public class ControladorCarrera {
 	
 private static ControladorCarrera instance;
@@ -50,8 +49,12 @@ private List<Carrera> Carreras= new ArrayList<Carrera>();
         	carrera.agregarMateriasAUnaCarrera(m);
         }
 	}
-    public Boolean validarCargaHorariaMax( Carrera carrera) {
-        // TODO implement here
+	
+    public Boolean validarCargaHorariaMax( Carrera carrera, Estudiante estudiante) {
+       if(estudiante.getCargaHorariaActual()<=carrera.getCargaHorariaMax()) {
+    	   return true;
+       }
+       else
         return false;
     }
 

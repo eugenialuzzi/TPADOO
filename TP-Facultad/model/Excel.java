@@ -12,7 +12,7 @@ public class Excel extends Informe{
 
     public Excel(int idDocente, List<Curso> cursos, int IdInforme) {
         super(idDocente, cursos, IdInforme);
-        //TODO Auto-generated constructor stub
+        
     }
     
 

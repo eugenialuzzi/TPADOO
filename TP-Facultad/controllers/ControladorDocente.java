@@ -79,7 +79,7 @@ private static ControladorDocente instance;
     
 		public void crearCursoPotencial(int idDocente, DiaSemana diaSemana, TurnoInterface turno, int horasAsignadas) {
 		ControladorCurso controladorCurso = ControladorCurso.getInstance();
-		///Curso curso = new Curso(horasAsignadas, diaSemana, null, null, turno);
+		
 		Curso curso = controladorCurso.crearCursoPotencial(horasAsignadas, diaSemana, null,turno);
 		buscarDocentePorSuId(idDocente).agregarCursoPreferencial(curso);
     }

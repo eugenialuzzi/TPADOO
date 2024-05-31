@@ -12,7 +12,7 @@ public class PDF extends Informe {
 
     public PDF(int idDocente, List<Curso> cursos, int IdInforme) {
         super(idDocente, cursos, IdInforme);
-        //TODO Auto-generated constructor stub
+        
     }
 
 

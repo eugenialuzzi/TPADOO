@@ -7,9 +7,7 @@ import interfaces.IMedioDePago;
 import interfaces.MercadoPago;
 import interfaces.PagoMisCuentas;
 
-/**
- * 
- */
+
 public class ControladorPago {
 
 	private static ControladorPago instance;
