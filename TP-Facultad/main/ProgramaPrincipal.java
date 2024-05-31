@@ -36,10 +36,8 @@ public class ProgramaPrincipal {
 	public static void main(String[] args) {
 		ControladorCarrera controladorCarrera = ControladorCarrera.getInstance();
 		ControladorMateria controladorMateria = ControladorMateria.getInstance();
-		ControladorDocente controladorDocente = ControladorDocente.getInstance();
+		
 		ControladorEstudiante controladorEstudiante =ControladorEstudiante.getInstance(); 
-		/*Carrera carrera1 = new Carrera("Ingenieria en Sistemas"); */
-		ControladoInscripcion controladorInscripcion = ControladoInscripcion.getInstance();
 		ControladorPago controladorPago = ControladorPago.getInstance();
 		
 		ControladorCurso controladorCurso = ControladorCurso.getInstance();
@@ -48,23 +46,47 @@ public class ProgramaPrincipal {
 		
 		Carrera carrera1=controladorCarrera.crearCarrera("Ingenieria en Sistemas");
 		
-		/*Carrera carrera2 = new Carrera("Derecho");*/
+
 		Carrera carrera2=controladorCarrera.crearCarrera("Derecho");
 		
-		/*Carrera carrera3 = new Carrera("Ingenieria Quimica");*/
+	
 		Carrera carrera3=controladorCarrera.crearCarrera("Ingenieria Quimica");
 		
 		
 		List<Materia> materias = new ArrayList<>();
+		List<Materia> materias2 = new ArrayList<>();
+		List<Materia> materias3 = new ArrayList<>();
 		
-		Materia materia;
-		materia=controladorMateria.crearMateria("Analisis Matematico", false, 15000,4);
-	    /*materias.add(new Materia(3400,"Analisis Matematico", true));*/
-	    materias.add(materia);
+		Materia materia1;
+		Materia materia2;
 		
-	    materia=controladorMateria.crearMateria("Programacion", false, 20000,4);
-	    /*materias.add(new Materia(3500,"Programacion", false));*/
-	    materias.add(materia);
+		materia1=controladorMateria.crearMateria("Analisis Matematico", false, 15000,4);
+
+	    materias.add(materia1);
+		
+	    materia2=controladorMateria.crearMateria("Programacion", false, 20000,4);
+	  
+	    materias.add(materia2);
+	    
+	    Materia mat1=controladorMateria.crearMateria("fisica 1",false,null, 10000,2);
+		
+		materias2.add(mat1);
+		//fisica dos tiene correlativa para ing en sistemas, pero no para derecho
+		Materia mat2=controladorMateria.crearMateria("fisica 2",true,mat1, 12000,6);
+		materias3.add(mat2);
+		controladorCarrera.agregarMateria(materias3,carrera1);
+	
+		System.out.println();
+		
+		Materia mat3=controladorMateria.crearMateria("filosofia",false,null, 10000,2);
+		Materia mat4=controladorMateria.crearMateria("fisica 1",false,null,10000,4);
+		Materia mat5=controladorMateria.crearMateria("fisica 2",false,null,12000,6);
+		materias2.add(mat3);
+		materias3.add(mat4);
+		materias3.add(mat5);
+		controladorCarrera.agregarMateria(materias2,carrera2);
+		System.out.println(" ");
+	    
 	    
 	    Facultad facultad=new Facultad();
 	    facultad.setNombreDeFacultad("Facultad de Ingenieria");
@@ -102,74 +124,62 @@ public class ProgramaPrincipal {
 		Aula aula2 = new Aula (756, 50);
 		
 		List<Curso> cursos = new ArrayList<>();
+		List<Curso> cursos2 = new ArrayList<>();
+		List<Curso> cursos3 = new ArrayList<>();
 		
 		TurnoInterface turno1 = new TurnoMañana();
         TurnoInterface turno2 = new TurnoTarde();
         TurnoInterface turno3 = new TurnoNoche();	
 
-		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.LUNES, aula1, turno1);
-		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, aula1, turno2);
-		Curso curso3= controladorCurso.crearCurso(1441, DiaSemana.LUNES, aula1, turno2);
-
+		Curso curso1= controladorCurso.crearCurso(3456, DiaSemana.MARTES, aula1, turno1);
+		Curso curso2 = controladorCurso.crearCurso(3987,DiaSemana.JUEVES, aula2, turno2);
+		Curso curso3= controladorCurso.crearCurso(1441, DiaSemana.LUNES, aula1, turno3);
+		Curso curso4= controladorCurso.crearCurso(8456, DiaSemana.LUNES, aula2, turno2);
+		Curso curso5= controladorCurso.crearCurso(1252, DiaSemana.SABADO, aula2, turno1);
+		Curso curso6= controladorCurso.crearCurso(2825, DiaSemana.VIERNES, aula1, turno2);
 		
 		System.out.println();
 		cursos.add(curso1);
-		cursos.add(curso2);
+		cursos2.add(curso2);
 		cursos.add(curso3);
+		cursos3.add(curso4);
+		cursos3.add(curso5);
+		cursos2.add(curso6);
 		
 		controladorCurso.agregarListMateria(materias, curso1);
-		controladorCurso.agregarListMateria(materias, curso2);
-		controladorCurso.agregarListMateria(materias, curso3);
+		controladorCurso.agregarListMateria(materias2, curso2);
+		controladorCurso.agregarListMateria(materias3, curso3);
+		controladorCurso.agregarListMateria(materias, curso4);
+		controladorCurso.agregarListMateria(materias2, curso5);
+		controladorCurso.agregarListMateria(materias3, curso6);
+		
 		System.out.println(" ");
 		
 		adminFacade.agregarCursoADocente(cursos, docente);
-		adminFacade.agregarCursoADocente(cursos, docente2);
-		adminFacade.agregarCursoADocente(cursos, docente3);
+		adminFacade.agregarCursoADocente(cursos2, docente2);
+		adminFacade.agregarCursoADocente(cursos3, docente3);
+
 		
-		System.out.println("el aula del curso1 es "+curso1.getAula() + " y su capacidad es "+curso1.getAula().getCapacidadMax());
-		;
-		System.out.println("");
+		System.out.println();
 		
-		
-		
-		System.out.println("su capacidad es "+controladorCurso.verCapacidadAula(curso1));
-		
-		
-		
-		
-		Materia mat1=controladorMateria.crearMateria("fisica 1",false,null, 10000,2);
-		materias.clear();
-		materias.add(mat1);
-		//fisica dos tiene correlativa para ing en sistemas, pero no para derecho
-		Materia mat2=controladorMateria.crearMateria("fisica 2",true,mat1, 12000,6);//fisica 2 para ing en sistemas
-		materias.add(mat2);
-		controladorCarrera.agregarMateria(materias,carrera1);
 	
+
 		
-		materias.clear();
-		Materia mat3=controladorMateria.crearMateria("filosofia",false,null, 10000,2);
-		Materia mat4=controladorMateria.crearMateria("fisica 1",false,null,10000,4);
-		Materia mat5=controladorMateria.crearMateria("fisica 2",false,null,12000,6);
-		materias.add(mat3);
-		materias.add(mat4);
-		materias.add(mat5);
-		controladorCarrera.agregarMateria(materias,carrera2);
-		System.out.println(" ");
-		System.out.println(" la materia tiene: "+mat3.getCargaHorariaMat());
+		
+		
 		
 		
 		adminFacade.inscribir(estudiante, mat2,curso1);
-		/*System.out.println("el estudiante es "+estudiante.getApellido()+ " "+estudiante.getNombre());*/
 		adminFacade.inscribir(estudiante, mat1,curso2);
 		
-
+		System.out.println();
 		adminFacade.calcularMonto(estudiante);
 		
 		controladorPago.seleccionarMedioDePago();
 		
 		List<Curso> cursosAsignados = adminFacade.cursosAsignados(2);
 		
-	
+		System.out.println();
         List<String> cronograma = adminFacade.cronogramaSemanal(2);
 		System.out.println(" ");
         System.out.println("Cronograma semanal del docente:");
@@ -180,9 +190,8 @@ public class ProgramaPrincipal {
         for (String cursoInfo : cronograma) {
             System.out.println(cursoInfo);
         }  
-        System.out.println("");
-        System.out.println("otro intento");
-        
+     
+    	System.out.println();
         cronograma = adminFacade.cronogramaSemanal(2);
        CronogramaDocente cronogramaDocente=new CronogramaDocente();
        cronogramaDocente.imprimirCronogramaDocente(cronograma);
@@ -191,37 +200,42 @@ public class ProgramaPrincipal {
 		
 		FactoryInforme factoryInforme = new FactoryInforme();
 		 
+		System.out.println();
 		
-		
-		System.out.println(" back up");
-		Informe informe = factoryInforme.crearInforme(docente.getIdDocente(), cursosAsignados, 0);
-		System.out.println(" resumen");
-		factoryInforme.mostrarInformeResumido(informe);
-		System.out.println(" et");
 	
+		Informe informe = factoryInforme.crearInforme(docente.getIdDocente(), cursosAsignados, 0);
+		
+		System.out.println("Creacion de Informe");
+		factoryInforme.mostrarInformeResumido(informe);
+	
+		System.out.println();
 		factoryInforme.exportar(informe);
 
+		System.out.println();
+		
 		controladorMateria.getCantidadInscriptosPorCurso();
 
+		System.out.println();
 		
 		
-		System.out.println("aca le asigno un turno noche a un curso");
-		TurnoInterface turno=new TurnoMañana();
+		
 		curso1.setTurno(turno1);
-
-
+		
 		adminFacade.crearCursoPotencial(3, DiaSemana.LUNES, turno2, 16);
-		adminFacade.crearCursoPotencial(3, DiaSemana.SABADO, turno, 16);
-		adminFacade.compararPreferenciasDocentes(docente3, curso3);
-
-		System.out.println("Tamaño de la lista: " + adminFacade.buscarDocentePorSuId(3).getCursoPreferencial().size());
-
+		adminFacade.crearCursoPotencial(3, DiaSemana.SABADO, turno1, 16);
+		
+		System.out.println("el docente asigno su preferencia horaria");
+		
+		adminFacade.compararPreferenciasDocentes(docente3, curso4);
+		adminFacade.compararPreferenciasDocentes(docente3, curso5);
+		
+		System.out.println();
 		
 		
 		cronogramaDocente.imprimirCronogramaDocente(cronogramaDocente.crearCronogramaSemanal(3));
 		
-
-		System.out.println(controladorCurso.buscarCursoPorSuId(1441));
+		System.out.println();
+		
 		for (Curso curso:adminFacade.cursosAsignados(1)) {
 			System.out.println("cursos que tiene el docente: "+curso.getIdCurso());
 		}
@@ -231,7 +245,7 @@ public class ProgramaPrincipal {
 		System.out.println();
 		System.out.println("horas de trabajo de un docente: "+	adminFacade.horasTrabajadasDocente(1));
 	
-	
+		System.out.println();
 		RecursosHumanos rhh=new RecursosHumanos();
 		System.out.println("se informa a recursos humanos la cantidad de horas trabajadas por el docente "+rhh.horasLiquidadas(docente3));
 		
