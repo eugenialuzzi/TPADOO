@@ -8,7 +8,6 @@ import interfaces.TurnoInterface;
 public class Curso{
 
     private int idCurso;
-    private LocalTime horario;
     private Aula aula;
     private DiaSemana diaSemana;
     private List<Materia> materias;
@@ -27,17 +26,7 @@ public class Curso{
 		this.materias = materias;
 	}
 
-	public Curso(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, TurnoInterface turno) {
-		super();
-		this.idCurso = idCurso;
-		
-		this.horario = horario;
-		this.aula = aula;
-		this.diaSemana = diaSemana;
-		this.materias = new ArrayList<>();
-		this.turno=turno;
-	}
-	/*TEST HORARIO EUGE*/
+
 	public Curso(int idCurso, DiaSemana diaSemana, Aula aula, TurnoInterface turno) {
 		super();
 		this.idCurso = idCurso;
@@ -58,15 +47,6 @@ public class Curso{
 	public void setIdCurso(int idCurso) {
 		this.idCurso = idCurso;
 	}
-
-	public LocalTime getHorario() {
-		return horario;
-	}
-
-	public void setHorario(LocalTime horario) {
-		this.horario = horario;
-	}
-    
 
 	public Aula getAula() {
 		return aula;
@@ -157,7 +137,7 @@ public class Curso{
 
 	@Override
 	public String toString() {
-		return "Curso [idCurso=" + idCurso + ", horario=" + horario + ", aula=" + aula + ", diaSemana=" + diaSemana
+		return "Curso [idCurso=" + idCurso + ", aula=" + aula + ", diaSemana=" + diaSemana
 				+ ", materias=" + materias + ", turno=" + turno + ", materia=" + materia + ", lugaresDisponibles="
 				+ lugaresDisponibles + ", cantidadDeInscriptos=" + cantidadDeInscriptos + "]";
 	}  

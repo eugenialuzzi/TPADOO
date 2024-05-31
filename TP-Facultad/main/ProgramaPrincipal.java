@@ -12,6 +12,7 @@ import controllers.ControladorDocente;
 import controllers.ControladorEstudiante;
 import controllers.ControladorMateria;
 import controllers.ControladorPago;
+import facade.AdministracionFacade;
 import model.Aula;
 import model.Carrera;
 import model.CronogramaDocente;
@@ -29,19 +30,21 @@ import interfaces.TurnoMañana;
 import interfaces.TurnoTarde;
 import interfaces.TurnoNoche;
 import interfaces.TurnoInterface;
-
+import facade.ISistemaAdministrativo;
 public class ProgramaPrincipal {
 
 	public static void main(String[] args) {
 		ControladorCarrera controladorCarrera = ControladorCarrera.getInstance();
 		ControladorMateria controladorMateria = ControladorMateria.getInstance();
 		ControladorDocente controladorDocente = ControladorDocente.getInstance();
-		ControladorEstudiante controladorEstudiante =ControladorEstudiante.getInstance();  /*probar despues
+		ControladorEstudiante controladorEstudiante =ControladorEstudiante.getInstance(); 
 		/*Carrera carrera1 = new Carrera("Ingenieria en Sistemas"); */
 		ControladoInscripcion controladorInscripcion = ControladoInscripcion.getInstance();
 		ControladorPago controladorPago = ControladorPago.getInstance();
 		
 		ControladorCurso controladorCurso = ControladorCurso.getInstance();
+		
+		ISistemaAdministrativo adminFacade=new AdministracionFacade();
 		
 		Carrera carrera1=controladorCarrera.crearCarrera("Ingenieria en Sistemas");
 		
@@ -89,9 +92,10 @@ public class ProgramaPrincipal {
 	
 		System.out.println(" ");
 	
-		Docente docente = controladorDocente.crearDocente("Esteban", "Lamonte");
-		Docente docente2 = controladorDocente.crearDocente("Carmen", "Lopez");
-		Docente docente3 = controladorDocente.crearDocente("Alberto", "Perez");
+		Docente docente = adminFacade.crearDocente("Esteban", "Lamonte");
+		
+		Docente docente2 = adminFacade.crearDocente("Carmen", "Lopez");
+		Docente docente3 = adminFacade.crearDocente("Alberto", "Perez");
 		
 		System.out.println(" ");
 		Aula aula1 = new Aula (123, 50);
@@ -118,9 +122,9 @@ public class ProgramaPrincipal {
 		controladorCurso.agregarListMateria(materias, curso3);
 		System.out.println(" ");
 		
-		controladorDocente.agregarCursoADocente(cursos, docente);
-		controladorDocente.agregarCursoADocente(cursos, docente2);
-		controladorDocente.agregarCursoADocente(cursos, docente3);
+		adminFacade.agregarCursoADocente(cursos, docente);
+		adminFacade.agregarCursoADocente(cursos, docente2);
+		adminFacade.agregarCursoADocente(cursos, docente3);
 		
 		System.out.println("el aula del curso1 es "+curso1.getAula() + " y su capacidad es "+curso1.getAula().getCapacidadMax());
 		;
@@ -154,19 +158,19 @@ public class ProgramaPrincipal {
 		System.out.println(" la materia tiene: "+mat3.getCargaHorariaMat());
 		
 		
-		controladorInscripcion.inscribir(estudiante, mat2,curso1);
+		adminFacade.inscribir(estudiante, mat2,curso1);
 		/*System.out.println("el estudiante es "+estudiante.getApellido()+ " "+estudiante.getNombre());*/
-		controladorInscripcion.inscribir(estudiante, mat1,curso2);
+		adminFacade.inscribir(estudiante, mat1,curso2);
 		
 
-		controladorInscripcion.calcularMonto(estudiante);
+		adminFacade.calcularMonto(estudiante);
 		
 		controladorPago.seleccionarMedioDePago();
 		
-		List<Curso> cursosAsignados = controladorDocente.cursosAsignados(2);
+		List<Curso> cursosAsignados = adminFacade.cursosAsignados(2);
 		
 	
-        List<String> cronograma = controladorDocente.cronogramaSemanal(2);
+        List<String> cronograma = adminFacade.cronogramaSemanal(2);
 		System.out.println(" ");
         System.out.println("Cronograma semanal del docente:");
         System.out.println("DIA " + " - "+ "CURSO "+ "- " + "HORARIO");
@@ -179,7 +183,7 @@ public class ProgramaPrincipal {
         System.out.println("");
         System.out.println("otro intento");
         
-        cronograma = controladorDocente.cronogramaSemanal(2);
+        cronograma = adminFacade.cronogramaSemanal(2);
        CronogramaDocente cronogramaDocente=new CronogramaDocente();
        cronogramaDocente.imprimirCronogramaDocente(cronograma);
 		// Informes
@@ -206,11 +210,11 @@ public class ProgramaPrincipal {
 		curso1.setTurno(turno1);
 
 
-		controladorDocente.crearCursoPotencial(3, DiaSemana.LUNES, turno2, 16);
-		controladorDocente.crearCursoPotencial(3, DiaSemana.SABADO, turno, 16);
-		controladorDocente.compararPreferenciasDocentes(docente3, curso3);
+		adminFacade.crearCursoPotencial(3, DiaSemana.LUNES, turno2, 16);
+		adminFacade.crearCursoPotencial(3, DiaSemana.SABADO, turno, 16);
+		adminFacade.compararPreferenciasDocentes(docente3, curso3);
 
-		System.out.println("Tamaño de la lista: " + controladorDocente.buscarDocentePorSuId(3).getCursoPreferencial().size());
+		System.out.println("Tamaño de la lista: " + adminFacade.buscarDocentePorSuId(3).getCursoPreferencial().size());
 
 		
 		
@@ -218,20 +222,20 @@ public class ProgramaPrincipal {
 		
 
 		System.out.println(controladorCurso.buscarCursoPorSuId(1441));
-		for (Curso curso:controladorDocente.cursosAsignados(1)) {
+		for (Curso curso:adminFacade.cursosAsignados(1)) {
 			System.out.println("cursos que tiene el docente: "+curso.getIdCurso());
 		}
 		
 	
 		
-		
-		System.out.println("horas de trabajo de un docente: "+	controladorDocente.horasTrabajadasDocente(1));
+		System.out.println();
+		System.out.println("horas de trabajo de un docente: "+	adminFacade.horasTrabajadasDocente(1));
 	
 	
 		RecursosHumanos rhh=new RecursosHumanos();
 		System.out.println("se informa a recursos humanos la cantidad de horas trabajadas por el docente "+rhh.horasLiquidadas(docente3));
 		
-		
+		System.out.println();
 		System.out.println(" fin");
 		// TODO Auto-generated method stub
 		

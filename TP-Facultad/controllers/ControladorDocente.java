@@ -80,7 +80,7 @@ private static ControladorDocente instance;
 		public void crearCursoPotencial(int idDocente, DiaSemana diaSemana, TurnoInterface turno, int horasAsignadas) {
 		ControladorCurso controladorCurso = ControladorCurso.getInstance();
 		///Curso curso = new Curso(horasAsignadas, diaSemana, null, null, turno);
-		Curso curso = controladorCurso.crearCursoPotencial(horasAsignadas, diaSemana, null, null, turno);
+		Curso curso = controladorCurso.crearCursoPotencial(horasAsignadas, diaSemana, null,turno);
 		buscarDocentePorSuId(idDocente).agregarCursoPreferencial(curso);
     }
 
@@ -102,7 +102,7 @@ private static ControladorDocente instance;
             if (docente.getIdDocente() == idDocente) {
                 for (Curso curso : docente.getCursos()) {
                     if (curso.getDiaSemana() != null) {
-                        String cursoInfo = curso.getDiaSemana() + " - " +curso.getIdCurso()+ " - " + curso.getHorario();
+                        String cursoInfo = curso.getDiaSemana() + " - " +curso.getIdCurso()+ " - " +curso.getTurno().horaInicio()+" a "+curso.getTurno().horaFin();
                         cronogramaSemanal.add(cursoInfo);
                     }
                 }
@@ -132,7 +132,7 @@ private static ControladorDocente instance;
 	
 	
 	public int horasTrabajadasDocente (int idDocente) {
-		System.out.println("ingreso en horas trabajadas en controlador dodente");
+		
 		int horasTrabajadas=buscarDocentePorSuId(idDocente).calcularHorasAsignadas();
 		
 		return horasTrabajadas;

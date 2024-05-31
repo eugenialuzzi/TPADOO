@@ -43,14 +43,13 @@ public class ControladorCurso {
     }
 
 	   
-    public Curso crearCursoPotencial(int idCurso, DiaSemana diaSemana, LocalTime horario, Aula aula, TurnoInterface turno) {
-    	Curso curso = new Curso(idCurso, diaSemana, horario, aula, turno);
+    public Curso crearCursoPotencial(int idCurso, DiaSemana diaSemana, Aula aula, TurnoInterface turno) {
+    	Curso curso = new Curso(idCurso, diaSemana, aula, turno);
     	
     	return curso;
     	
     }
     
-    /*esto es lo nuevo*/
     public void asignarUnTurnoEspecialACurso(int idCurso , TurnoInterface turnoInterface) {
     	
     	buscarCursoPorSuId(idCurso).setTurno(turnoInterface);

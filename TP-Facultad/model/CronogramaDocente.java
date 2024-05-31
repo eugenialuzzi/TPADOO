@@ -30,7 +30,7 @@ public List<String> crearCronogramaSemanal(int idDocente) {
     
             for (Curso curso : docente.getCursos()) {
                 if (curso.getDiaSemana() != null) {
-                    String cursoInfo = curso.getDiaSemana() + " - " +curso.getIdCurso()+ " - " + curso.getHorario();
+                    String cursoInfo = curso.getDiaSemana() + " - " +curso.getIdCurso()+ " "+curso.getTurno().horaInicio()+" a "+curso.getTurno().horaFin();
                     
                     cronogramaSemanal.add(cursoInfo);
                 }

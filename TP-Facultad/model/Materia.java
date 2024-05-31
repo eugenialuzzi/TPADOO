@@ -96,7 +96,7 @@ public class Materia {
 			if (c.tieneVacante(c)) {
 				cursosDisponibles.add(c);
 				System.out.println("el curso" + c.getIdCurso() +
-						"de los dias" + c.getHorario() + " " + 
+						"de los dias"  +c.getTurno().horaInicio()+" a "+c.getTurno().horaFin() + " " + 
 						c.getDiaSemana() + "tiene vacantes");
 			}
 		}
